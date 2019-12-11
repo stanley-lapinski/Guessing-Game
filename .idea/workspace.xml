@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/com/javafx/screens/RootScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javafx/main/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javafx/main/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javafx/screens/MenuScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javafx/screens/MenuScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javafx/screens/OptionScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javafx/screens/OptionScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/javafx/screens/PlayScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javafx/screens/PlayScreen.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,8 +62,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -64,8 +72,12 @@
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectId" id="1UqCOdSINnEFa3mf7YFbTtNx9QE" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectReloadState">
     <option name="STATE" value="0" />
   </component>
@@ -84,7 +96,7 @@
     <property name="OverrideImplement.combined" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../javafx-sdk-11.0.2/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PracticeGUI_General" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -213,26 +225,26 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="51" y="98" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1576074762059" />
-    <state x="287" y="227" key="FileChooserDialogImpl" timestamp="1576074737876">
+    <state x="287" y="227" key="FileChooserDialogImpl" timestamp="1576081361073">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="287" y="227" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1576074737876" />
-    <state width="1637" height="271" key="GridCell.Tab.0.bottom" timestamp="1576076055449">
+    <state x="287" y="227" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1576081361073" />
+    <state width="1449" height="270" key="GridCell.Tab.0.bottom" timestamp="1576081792154">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="271" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1576076055449" />
-    <state width="1637" height="271" key="GridCell.Tab.0.center" timestamp="1576076055448">
+    <state width="1449" height="270" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1576081792154" />
+    <state width="1449" height="270" key="GridCell.Tab.0.center" timestamp="1576081792154">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="271" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1576076055448" />
-    <state width="1637" height="271" key="GridCell.Tab.0.left" timestamp="1576076055448">
+    <state width="1449" height="270" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1576081792154" />
+    <state width="1449" height="270" key="GridCell.Tab.0.left" timestamp="1576081792153">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="271" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1576076055448" />
-    <state width="1637" height="271" key="GridCell.Tab.0.right" timestamp="1576076055449">
+    <state width="1449" height="270" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1576081792153" />
+    <state width="1449" height="270" key="GridCell.Tab.0.right" timestamp="1576081792154">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="271" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1576076055449" />
+    <state width="1449" height="270" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1576081792154" />
     <state x="61" y="60" key="SettingsEditor" timestamp="1576074741499">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

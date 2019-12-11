@@ -11,9 +11,9 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent menuPane = FXMLLoader.load(getClass().getResource("MenuScreen.fxml"));
+        Parent rootStackPane = FXMLLoader.load(getClass().getResource("/com/javafx/screens/RootScreen.fxml"));
+        primaryStage.setScene(new Scene(rootStackPane));
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.setScene(new Scene(menuPane));
         primaryStage.show();
     }
 
