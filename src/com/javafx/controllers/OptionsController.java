@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 
 import java.io.IOException;
 
-public class PlayController {
+public class OptionsController {
 
     private RootController rootController;
 

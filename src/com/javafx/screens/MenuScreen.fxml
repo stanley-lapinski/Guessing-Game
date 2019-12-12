@@ -7,29 +7,29 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757; -fx-border-color: #7D109C; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.MenuController">
    <children>
-      <Button layoutX="175.0" layoutY="139.0" mnemonicParsing="false" onAction="#playGame" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="PLAY" textFill="WHITE">
+      <Button layoutX="175.0" layoutY="144.0" mnemonicParsing="false" onAction="#playOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="PLAY" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="175.0" layoutY="304.0" mnemonicParsing="false" onAction="#openOptions" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="OPTIONS" textFill="WHITE">
+      <Button layoutX="150.0" layoutY="219.0" mnemonicParsing="false" onAction="#howToPlayOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #632689;" text="HOW TO PLAY?" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="175.0" layoutY="480.0" mnemonicParsing="false" onAction="#exit" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="EXIT" textFill="WHITE">
+      <Button layoutX="175.0" layoutY="480.0" mnemonicParsing="false" onAction="#exitOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="EXIT" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="150.0" layoutY="222.0" mnemonicParsing="false" onAction="#openOptions" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #632689;" text="HOW TO PLAY?" textFill="WHITE">
+      <Button layoutX="175.0" layoutY="293.0" mnemonicParsing="false" onAction="#optionsOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="OPTIONS" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Label layoutX="109.0" layoutY="42.0" text="Guess the Number!" textAlignment="CENTER" textFill="WHITE" underline="true">
+      <Label layoutX="103.0" layoutY="53.0" text="Guess the Number!" textFill="WHITE" underline="true">
          <font>
-            <Font name="Berlin Sans FB" size="36.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="35.0" />
          </font>
       </Label>
    </children>

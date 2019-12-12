@@ -2,7 +2,7 @@ package com.javafx.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
+import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 
 import java.io.IOException;
@@ -10,17 +10,22 @@ import java.io.IOException;
 public class RootController {
 
     @FXML
-    private StackPane mainStackPane;
+    private StackPane rootStackPane;
 
-    @FXML
     public void initialize() throws IOException {
         loadMenuScreen();
     }
 
-    @FXML
     public void loadMenuScreen() throws IOException {
-        Parent pane = FXMLLoader.load(getClass().getResource("/com/javafx/screens/MenuScreen.fxml"));
-        mainStackPane.getChildren().add(pane);
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/MenuScreen.fxml"));
+        Pane pane = loader.load();
+        MenuController menuController = loader.getController();
+        menuController.setRootController(this);
+        setScreen(pane);
     }
 
+    public void setScreen(Pane pane) {
+        rootStackPane.getChildren().clear();
+        rootStackPane.getChildren().add(pane);
+    }
 }

@@ -2,22 +2,28 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757; -fx-border-color: #7D109C; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757; -fx-border-color: #7D109C; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.PlayController">
    <children>
-      <Label layoutX="47.0" layoutY="145.0" text="YOUR NUMBER :" textFill="WHITE">
+      <Label layoutX="45.0" layoutY="78.0" text="YOUR NUMBER :" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="28.0" />
          </font>
       </Label>
-      <TextField layoutX="282.0" layoutY="131.0" prefHeight="64.0" prefWidth="176.0" style="-fx-background-radius: 30;" />
-      <Button layoutX="200.0" layoutY="234.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #632689;" text="CHECK!" textFill="WHITE">
+      <TextField layoutX="280.0" layoutY="64.0" prefHeight="64.0" prefWidth="176.0" style="-fx-background-radius: 30;" />
+      <Button layoutX="198.0" layoutY="167.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #632689;" text="CHECK!" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="30.0" />
+         </font>
+      </Button>
+      <Separator layoutX="26.0" layoutY="509.0" prefHeight="2.0" prefWidth="449.0" />
+      <Button layoutX="175.0" layoutY="527.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
    </children>
