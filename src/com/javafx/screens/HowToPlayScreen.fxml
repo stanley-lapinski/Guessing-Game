@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757 #310757; -fx-border-color: #632689; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="143.0" layoutY="44.0" text="HOW TO PLAY?" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="30.0" />
+         </font>
+      </Label>
+      <Separator layoutX="26.0" layoutY="94.0" prefHeight="2.0" prefWidth="449.0" />
+      <Label layoutX="23.0" layoutY="97.0" prefHeight="93.0" prefWidth="449.0" text="THE GAME IS ABOUT GUESSING THE NUMBER, COMPUTER HAS RANDOMLY SELECTED FOR YOU." textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="22.0" />
+         </font>
+      </Label>
+      <Separator layoutX="25.0" layoutY="501.0" prefHeight="2.0" prefWidth="449.0" />
+      <Button layoutX="175.0" layoutY="520.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="22.0" />
+         </font>
+      </Button>
+      <Label layoutX="23.0" layoutY="190.0" prefHeight="93.0" prefWidth="449.0" text="ENTER A NUMBER YOU THINK, MIGHT BE THE ONE COMPUTER HAS CHOSEN, AND CLICK ON &quot;CHECK&quot; BUTTON TO FIND OUT!" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="23.0" layoutY="270.0" prefHeight="135.0" prefWidth="449.0" text="IF YOUR GUESS IS HIGHER, THAN THE NUMBER COMPUTER HAS CHOSEN, YOU WILL SEE MESSAGE &quot;TOO HIGH!&quot;, SUGGESTING YOU TO PICK LOWER NUMBER. IF YOUR GUESS IS TOO LOW, YOU WILL SEE &quot;TOO LOW&quot; MESSAGE SUGGESTING YOU TO PICK HIGHER NUMBER." textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="25.0" layoutY="405.0" prefHeight="93.0" prefWidth="449.0" text="YOU PLAY UNTILL YOU EITHER GUESS THE CORRECT NUMBER OR YOU RUN OUT OF CHANCES TO GUESS." textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>
