@@ -14,8 +14,11 @@
             <Font name="Berlin Sans FB Demi Bold" size="28.0" />
          </font>
       </Label>
-      <TextField layoutX="280.0" layoutY="64.0" prefHeight="64.0" prefWidth="176.0" style="-fx-background-radius: 30;" />
-      <Button layoutX="198.0" layoutY="167.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #632689;" text="CHECK!" textFill="WHITE">
+      <TextField fx:id="guessNumber" layoutX="280.0" layoutY="64.0" prefHeight="64.0" prefWidth="176.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+         </font></TextField>
+      <Button layoutX="198.0" layoutY="167.0" mnemonicParsing="false" onAction="#checkAction" prefHeight="60.0" prefWidth="170.0" style="-fx-background-color: #632689;" text="CHECK!" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="30.0" />
          </font>
@@ -26,5 +29,6 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
+      <TextField fx:id="result" layoutX="176.0" layoutY="355.0" />
    </children>
 </Pane>
