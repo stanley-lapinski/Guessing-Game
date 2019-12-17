@@ -1,8 +1,10 @@
 package com.javafx.main;
 
+import com.javafx.controllers.OptionsController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -19,6 +21,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/javafx/images/bulb.png")));
 
         rootStackPane.setOnMousePressed(mouseEvent -> {
             x = mouseEvent.getSceneX();
@@ -30,6 +33,7 @@ public class Main extends Application {
         });
 
         primaryStage.show();
+        OptionsController.backgroundMusic();
     }
 
     public static void main(String[] args) {
