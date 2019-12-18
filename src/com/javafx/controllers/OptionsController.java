@@ -1,15 +1,13 @@
 package com.javafx.controllers;
 
-import javafx.beans.InvalidationListener;
-import javafx.beans.Observable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.Slider;
+import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -18,10 +16,13 @@ import java.util.ResourceBundle;
 
 public class OptionsController implements Initializable {
 
+    // soundCheckBox and soundVolumeSlider are not being used
     @FXML
     CheckBox musicCheckBox, soundCheckBox;
     @FXML
     Slider musicVolumeSlider, soundVolumeSlider;
+    @FXML
+    TextField rangeNumbersFrom, rangeNumbersTo;
 
     public RootController rootController;
     public static MediaPlayer backgroundMusicPlayer, correctGuessPlayer;
@@ -40,7 +41,7 @@ public class OptionsController implements Initializable {
         backgroundMusicPlayer.play();
     }
 
-    public static void soundEffects() {
+    public static void correctSoundEffects() {
         String correctGuessFile = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess.mp3";
         Media correctGuessSound = new Media(new File(correctGuessFile).toURI().toString());
         correctGuessPlayer = new MediaPlayer(correctGuessSound);

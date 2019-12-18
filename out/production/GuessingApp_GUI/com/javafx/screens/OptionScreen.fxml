@@ -31,7 +31,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="84.0" layoutY="130.0" prefHeight="27.0" prefWidth="198.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="rangeNumbersFrom" layoutX="84.0" layoutY="130.0" prefHeight="27.0" prefWidth="198.0" style="-fx-background-radius: 30;" />
       <Separator layoutX="22.0" layoutY="64.0" prefHeight="2.0" prefWidth="449.0" />
       <Separator layoutX="22.0" layoutY="206.0" prefHeight="2.0" prefWidth="449.0" />
       <Label layoutX="22.0" layoutY="236.0" prefHeight="24.0" prefWidth="279.0" text="NUMBER OF ALLOWED TRIES:" textFill="WHITE" wrapText="true">
@@ -61,7 +61,7 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <TextField layoutX="327.0" layoutY="130.0" prefHeight="27.0" prefWidth="150.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="rangeNumbersTo" layoutX="327.0" layoutY="130.0" prefHeight="27.0" prefWidth="150.0" style="-fx-background-radius: 30;" />
       <Separator layoutX="23.0" layoutY="309.0" prefHeight="2.0" prefWidth="449.0" />
       <Label layoutX="29.0" layoutY="320.0" prefHeight="24.0" prefWidth="75.0" text="MUSIC:" textFill="WHITE" wrapText="true">
          <font>
