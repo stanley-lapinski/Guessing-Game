@@ -2,6 +2,7 @@ package com.javafx.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.TextField;
@@ -22,17 +23,26 @@ public class PlayController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         guessNumberInputField.setPadding(new Insets(0, 30, 0, 30));
+        /*
+        FXMLLoader loader = new FXMLLoader();
+        OptionsController controller = loader.getController();
+        int rangeNumbersFrom = Integer.parseInt(controller.rangeNumbersFrom.getText());
+        int rangeNumbersTo = Integer.parseInt(controller.rangeNumbersTo.getText());
+        int theNumber = random(rangeNumbersFrom, rangeNumbersTo); */
     }
 
-    /* RNG method
+    //RNG method
     private static final Random RANDOM = new Random();
     public static int random(int min, int max) {
         return RANDOM.nextInt(max) + min;
-    } */
+    }
 
     public void checkAction() {
 
-        OptionsController.correctSoundEffects();
+
+
+
+        OptionsController.correctSoundEffect();
 
         int theNumber = (int) (Math.random() * 100 + 1);
         int guess = Integer.parseInt(guessNumberInputField.getText());

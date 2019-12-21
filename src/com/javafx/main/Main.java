@@ -33,7 +33,7 @@ public class Main extends Application {
         });
 
         primaryStage.show();
-        OptionsController.backgroundMusic();
+        OptionsController.backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
     }
 
     public static void main(String[] args) {
