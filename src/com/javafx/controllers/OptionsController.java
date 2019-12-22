@@ -1,18 +1,18 @@
 package com.javafx.controllers;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
+import com.javafx.main.Main;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
-import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
@@ -20,18 +20,17 @@ import java.util.ResourceBundle;
 
 public class OptionsController implements Initializable {
 
-    // soundCheckBox and soundVolumeSlider are not being used
     @FXML
     CheckBox musicCheckBox;
     @FXML
     Slider musicVolumeSlider;
     @FXML
-    TextField rangeNumbersFrom, rangeNumbersTo;
+    public TextField rangeNumbersFrom, rangeNumbersTo, numberOfTries; //numberoftries not used
     @FXML
     ComboBox<String> changeMusicBox;
 
     public RootController rootController;
-    public static MediaPlayer backgroundMusicPlayer, correctGuessPlayer;
+    public static MediaPlayer backgroundMusicPlayer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,6 +39,28 @@ public class OptionsController implements Initializable {
 
         changeMusicBox.getItems().addAll("Video Game Level", "Going Through the Meadow", "Discovering New Place");
         changeMusicBox.setValue("Video Game Level");
+
+        rangeNumbersFrom.setText("0");
+        rangeNumbersFrom.setPadding(new Insets(0, 30, 0, 30));
+        rangeNumbersTo.setText("100");
+        rangeNumbersTo.setPadding(new Insets(0, 30, 0, 30));
+
+        rangeNumbersFrom.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    rangeNumbersFrom.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
+        rangeNumbersTo.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    rangeNumbersTo.setText(newValue.replaceAll("[^\\d]", ""));
+                }
+            }
+        });
     }
 
     public void changeTheMusic(ActionEvent event) {
@@ -66,19 +87,15 @@ public class OptionsController implements Initializable {
         backgroundMusicPlayer.play();
     }
 
-    public static void correctSoundEffect() {
-        String correctGuessFile = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess.mp3";
-        Media correctGuessSound = new Media(new File(correctGuessFile).toURI().toString());
-        correctGuessPlayer = new MediaPlayer(correctGuessSound);
-        correctGuessPlayer.play();
-    }
-
     public void pauseMusic(ActionEvent event) {
         boolean musicCheck = musicCheckBox.isSelected();
         if (!musicCheck) {
             backgroundMusicPlayer.pause();
         } else
             backgroundMusicPlayer.play();
+    }
+
+    public void saveOptions(ActionEvent event) {
     }
 
     public void backToMenu(ActionEvent event) throws IOException {

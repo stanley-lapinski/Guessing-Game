@@ -21,7 +21,7 @@ public class Main extends Application {
         primaryStage.setScene(scene);
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/javafx/images/bulb.png")));
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/javafx/images/guessing game icon.png")));
 
         rootStackPane.setOnMousePressed(mouseEvent -> {
             x = mouseEvent.getSceneX();

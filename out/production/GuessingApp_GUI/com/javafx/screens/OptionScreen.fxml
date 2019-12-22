@@ -17,22 +17,25 @@
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
          </font>
       </Label>
-      <Label layoutX="22.0" layoutY="88.0" text="RANGE OF NUMBERS:" textFill="WHITE">
+      <Label layoutX="22.0" layoutY="80.0" text="RANGE OF NUMBERS:" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="296.0" layoutY="133.0" text="TO" textFill="WHITE">
+      <Label layoutX="292.0" layoutY="136.0" text="TO" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="28.0" layoutY="133.0" text="FROM" textFill="WHITE">
+      <Label layoutX="26.0" layoutY="136.0" text="FROM" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="rangeNumbersFrom" layoutX="84.0" layoutY="130.0" prefHeight="27.0" prefWidth="198.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="rangeNumbersFrom" layoutX="84.0" layoutY="117.0" prefHeight="60.0" prefWidth="198.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+         </font></TextField>
       <Separator layoutX="22.0" layoutY="64.0" prefHeight="2.0" prefWidth="449.0" />
       <Separator layoutX="22.0" layoutY="206.0" prefHeight="2.0" prefWidth="449.0" />
       <Label layoutX="22.0" layoutY="236.0" prefHeight="24.0" prefWidth="279.0" text="NUMBER OF ALLOWED TRIES:" textFill="WHITE" wrapText="true">
@@ -40,18 +43,21 @@
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="134.0" layoutY="164.0" text="(UP TO 10'000)" textFill="WHITE">
+      <Label layoutX="134.0" layoutY="177.0" text="(UP TO 10'000)" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="358.0" layoutY="164.0" text="(DOWN TO 0)" textFill="WHITE">
+      <Label layoutX="354.0" layoutY="177.0" text="(DOWN TO 0)" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="308.0" layoutY="228.0" prefHeight="40.0" prefWidth="169.0" style="-fx-background-radius: 30;" />
-      <Label layoutX="340.0" layoutY="275.0" text="(FROM 1 TO 100)" textFill="WHITE">
+      <TextField fx:id="numberOfTries" layoutX="308.0" layoutY="218.0" prefHeight="60.0" prefWidth="169.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+         </font></TextField>
+      <Label layoutX="340.0" layoutY="278.0" text="(FROM 1 TO 100)" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>
@@ -62,7 +68,10 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="rangeNumbersTo" layoutX="327.0" layoutY="130.0" prefHeight="27.0" prefWidth="150.0" style="-fx-background-radius: 30;" />
+      <TextField fx:id="rangeNumbersTo" layoutX="323.0" layoutY="117.0" prefHeight="60.0" prefWidth="150.0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+         </font></TextField>
       <Separator layoutX="23.0" layoutY="309.0" prefHeight="2.0" prefWidth="449.0" />
       <Label layoutX="29.0" layoutY="320.0" prefHeight="24.0" prefWidth="75.0" text="MUSIC:" textFill="WHITE" wrapText="true">
          <font>
@@ -80,7 +89,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="79.0" layoutY="522.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="SAVE" textFill="WHITE">
+      <Button layoutX="79.0" layoutY="522.0" mnemonicParsing="false" onAction="#saveOptions" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="SAVE" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
