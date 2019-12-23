@@ -29,6 +29,10 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="result" layoutX="176.0" layoutY="355.0" />
+      <Label fx:id="resultLabel" alignment="CENTER" layoutX="26.0" layoutY="258.0" prefHeight="231.0" prefWidth="449.0" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+         </font>
+      </Label>
    </children>
 </Pane>

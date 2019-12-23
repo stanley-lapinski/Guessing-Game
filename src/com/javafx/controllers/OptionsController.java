@@ -16,6 +16,7 @@ import javafx.scene.media.MediaPlayer;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class OptionsController implements Initializable {
@@ -25,25 +26,29 @@ public class OptionsController implements Initializable {
     @FXML
     Slider musicVolumeSlider;
     @FXML
-    public TextField rangeNumbersFrom, rangeNumbersTo, numberOfTries; //numberoftries not used
+    TextField rangeNumbersFrom, rangeNumbersTo, numberOfTries; //numberoftries not used
     @FXML
     ComboBox<String> changeMusicBox;
 
     public RootController rootController;
     public static MediaPlayer backgroundMusicPlayer;
+    public static int numberFrom, numberTo;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         musicVolumeSlider.setValue(backgroundMusicPlayer.getVolume() * 100);
         musicVolumeSlider.valueProperty().addListener(observable -> backgroundMusicPlayer.setVolume(musicVolumeSlider.getValue() / 100));
 
-        changeMusicBox.getItems().addAll("Video Game Level", "Going Through the Meadow", "Discovering New Place");
+        changeMusicBox.getItems().addAll("Video Game Level", "Walk through Meadow", "Discovering New Place");
         changeMusicBox.setValue("Video Game Level");
+        changeMusicBox.setStyle("-fx-font: 15px \"Berlin Sans FB Demi\";");
 
-        rangeNumbersFrom.setText("0");
         rangeNumbersFrom.setPadding(new Insets(0, 30, 0, 30));
-        rangeNumbersTo.setText("100");
         rangeNumbersTo.setPadding(new Insets(0, 30, 0, 30));
+        numberOfTries.setPadding(new Insets(0, 30, 0, 30));
+
+        numberFrom = Integer.parseInt(Objects.requireNonNull(rangeNumbersFrom).getText());
+        numberTo = Integer.parseInt(Objects.requireNonNull(rangeNumbersTo).getText());
 
         rangeNumbersFrom.textProperty().addListener(new ChangeListener<String>() {
             @Override
@@ -69,7 +74,7 @@ public class OptionsController implements Initializable {
                     backgroundMusicPlayer.stop();
                     backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
                     break;
-                case "Going Through the Meadow":
+                case "Walk through Meadow":
                     backgroundMusicPlayer.stop();
                     backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic2.mp3");
                     break;
@@ -96,6 +101,7 @@ public class OptionsController implements Initializable {
     }
 
     public void saveOptions(ActionEvent event) {
+
     }
 
     public void backToMenu(ActionEvent event) throws IOException {

@@ -12,6 +12,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757 #310757; -fx-border-color: #632689; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.OptionsController">
    <children>
+      <ComboBox fx:id="changeMusicBox" layoutX="256.0" layoutY="377.0" onAction="#changeTheMusic" prefHeight="25.0" prefWidth="222.0" />
       <Label layoutX="187.0" layoutY="20.0" text="OPTIONS" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
@@ -22,7 +23,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="292.0" layoutY="136.0" text="TO" textFill="WHITE">
+      <Label layoutX="244.0" layoutY="136.0" text="TO" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
@@ -32,7 +33,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="rangeNumbersFrom" layoutX="84.0" layoutY="117.0" prefHeight="60.0" prefWidth="198.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="rangeNumbersFrom" layoutX="84.0" layoutY="117.0" prefHeight="60.0" prefWidth="150.0" promptText="0" style="-fx-background-radius: 30;">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="28.0" />
          </font></TextField>
@@ -43,19 +44,19 @@
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <Label layoutX="134.0" layoutY="177.0" text="(UP TO 10'000)" textFill="WHITE">
+      <Label layoutX="328.0" layoutY="177.0" text="(UP TO 10'000)" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="354.0" layoutY="177.0" text="(DOWN TO 0)" textFill="WHITE">
+      <Label layoutX="117.0" layoutY="177.0" text="(DOWN TO 0)" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="numberOfTries" layoutX="308.0" layoutY="218.0" prefHeight="60.0" prefWidth="169.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="numberOfTries" layoutX="308.0" layoutY="218.0" prefHeight="60.0" prefWidth="169.0" promptText="INFINITE" style="-fx-background-radius: 30;">
          <font>
-            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+            <Font name="Berlin Sans FB Demi Bold" size="25.0" />
          </font></TextField>
       <Label layoutX="340.0" layoutY="278.0" text="(FROM 1 TO 100)" textFill="WHITE">
          <font>
@@ -68,7 +69,7 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="rangeNumbersTo" layoutX="323.0" layoutY="117.0" prefHeight="60.0" prefWidth="150.0" style="-fx-background-radius: 30;">
+      <TextField fx:id="rangeNumbersTo" layoutX="281.0" layoutY="117.0" prefHeight="60.0" prefWidth="192.0" promptText="100" style="-fx-background-radius: 30;">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="28.0" />
          </font></TextField>
@@ -94,8 +95,7 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <ComboBox fx:id="changeMusicBox" layoutX="269.0" layoutY="377.0" onAction="#changeTheMusic" prefHeight="25.0" prefWidth="198.0" />
-      <Label layoutX="269.0" layoutY="353.0" prefHeight="24.0" prefWidth="198.0" text="CHANGE THE SONG:" textFill="WHITE" wrapText="true">
+      <Label layoutX="262.0" layoutY="353.0" prefHeight="24.0" prefWidth="205.0" text="CHANGE THE SONG:" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>

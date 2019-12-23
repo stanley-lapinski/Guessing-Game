@@ -7,10 +7,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -22,11 +22,11 @@ public class PlayController implements Initializable {
     @FXML
     TextField guessNumberInputField;
     @FXML
-    TextField result;
+    Label resultLabel;
 
     private RootController rootController;
     public MediaPlayer correctGuessPlayer, wrongGuessPlayer;
-    int theNumber;
+    int theNumber, defaultNumberFrom = 0, defaultNumberTo = 100;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,6 +40,9 @@ public class PlayController implements Initializable {
             }
         });
 
+        theNumber = random(OptionsController.numberFrom, OptionsController.numberTo);
+        System.out.println("from: " + OptionsController.numberFrom + "to: " + OptionsController.numberTo);
+
 
         /*
         FXMLLoader loader = new FXMLLoader();
@@ -52,31 +55,30 @@ public class PlayController implements Initializable {
         theNumber = random(rangeNumbersFrom, rangeNumbersTo); */
     }
 
-    private static final Random RANDOM = new Random();
     public static int random(int min, int max) {
-        return RANDOM.nextInt(max) + min;
+        System.out.println("this is min: " + min + "this is max: " + max);
+        return (int) (min + (Math.random() * (max - min)));
     }
 
-    public void checkAction() {
-
+    public void checkAction() throws InterruptedException {
 
         int guess = Integer.parseInt(guessNumberInputField.getText());
         if (guess < theNumber) {
-            result.setText("Your number is too low");
+            resultLabel.setText("Your number is too low");
             wrongSoundEffect();
         }
         else if (guess > theNumber) {
-            result.setText("Your number is too high");
+            resultLabel.setText("Your number is too high");
             wrongSoundEffect();
         }
         else {
-            result.setText("You are correct!");
+            resultLabel.setText("You are correct!");
             correctSoundEffect();
         }
     }
 
      public void correctSoundEffect() {
-        String correctGuessFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess.mp3";
+        String correctGuessFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess2.mp3";
         Media correctGuessSound = new Media(new File(correctGuessFilePath).toURI().toString());
         correctGuessPlayer = new MediaPlayer(correctGuessSound);
         correctGuessPlayer.play();
