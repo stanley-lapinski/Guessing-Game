@@ -12,7 +12,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757 #310757; -fx-border-color: #632689; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.OptionsController">
    <children>
-      <ComboBox fx:id="changeMusicBox" layoutX="256.0" layoutY="377.0" onAction="#changeTheMusic" prefHeight="25.0" prefWidth="222.0" />
+      <ComboBox fx:id="changeMusicBox" layoutX="256.0" layoutY="377.0" onAction="#changeTheMusicAction" prefHeight="25.0" prefWidth="222.0" />
       <Label layoutX="187.0" layoutY="20.0" text="OPTIONS" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
@@ -33,7 +33,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="rangeNumbersFrom" layoutX="84.0" layoutY="117.0" prefHeight="60.0" prefWidth="150.0" promptText="0" style="-fx-background-radius: 30;">
+      <TextField fx:id="rangeFromTextField" layoutX="84.0" layoutY="117.0" prefHeight="60.0" prefWidth="150.0" promptText="0" style="-fx-background-radius: 30;">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="28.0" />
          </font></TextField>
@@ -64,12 +64,12 @@
          </font>
       </Label>
       <Separator layoutX="25.0" layoutY="501.0" prefHeight="2.0" prefWidth="449.0" />
-      <Button layoutX="269.0" layoutY="522.0" mnemonicParsing="false" onAction="#backToMenu" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
+      <Button layoutX="269.0" layoutY="522.0" mnemonicParsing="false" onAction="#backToMenuAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="rangeNumbersTo" layoutX="281.0" layoutY="117.0" prefHeight="60.0" prefWidth="192.0" promptText="100" style="-fx-background-radius: 30;">
+      <TextField fx:id="rangeToTextField" layoutX="281.0" layoutY="117.0" prefHeight="60.0" prefWidth="192.0" promptText="100" style="-fx-background-radius: 30;">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="28.0" />
          </font></TextField>
@@ -79,7 +79,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <CheckBox fx:id="musicCheckBox" layoutX="55.0" layoutY="365.0" mnemonicParsing="false" onAction="#pauseMusic" selected="true" text="ON/OFF" textFill="WHITE">
+      <CheckBox fx:id="musicCheckBox" layoutX="55.0" layoutY="365.0" mnemonicParsing="false" onAction="#pauseMusicAction" selected="true" text="ON/OFF" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
@@ -90,7 +90,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="79.0" layoutY="522.0" mnemonicParsing="false" onAction="#saveOptions" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="SAVE" textFill="WHITE">
+      <Button layoutX="79.0" layoutY="522.0" mnemonicParsing="false" onAction="#saveOptionsAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="SAVE" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>

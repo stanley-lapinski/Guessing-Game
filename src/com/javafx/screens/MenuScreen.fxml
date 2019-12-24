@@ -7,24 +7,24 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757; -fx-border-color: #7D109C; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.MenuController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757; -fx-border-color: #632689; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.MenuController">
    <children>
-      <Button fx:id="playButton" layoutX="175.0" layoutY="268.0" mnemonicParsing="false" onAction="#playOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="PLAY" textFill="WHITE">
+      <Button fx:id="playButton" layoutX="175.0" layoutY="268.0" mnemonicParsing="false" onAction="#playAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="PLAY" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="howToPlayButton" layoutX="150.0" layoutY="330.0" mnemonicParsing="false" onAction="#howToPlayOnAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #632689;" text="HOW TO PLAY?" textFill="WHITE">
+      <Button fx:id="howToPlayButton" layoutX="150.0" layoutY="330.0" mnemonicParsing="false" onAction="#howToPlayAction" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #632689;" text="HOW TO PLAY?" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Button layoutX="175.0" layoutY="521.0" mnemonicParsing="false" onAction="#exitOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="EXIT" textFill="WHITE">
+      <Button layoutX="175.0" layoutY="521.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="EXIT" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Button fx:id="optionsButton" layoutX="175.0" layoutY="392.0" mnemonicParsing="false" onAction="#optionsOnAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="OPTIONS" textFill="WHITE">
+      <Button fx:id="optionsButton" layoutX="175.0" layoutY="392.0" mnemonicParsing="false" onAction="#optionsAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="OPTIONS" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>

@@ -1,6 +1,5 @@
 package com.javafx.controllers;
 
-import com.javafx.main.Main;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
@@ -13,10 +12,10 @@ import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+
 import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Paths;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class OptionsController implements Initializable {
@@ -26,13 +25,14 @@ public class OptionsController implements Initializable {
     @FXML
     Slider musicVolumeSlider;
     @FXML
-    TextField rangeNumbersFrom, rangeNumbersTo, numberOfTries; //numberoftries not used
+    TextField rangeFromTextField, rangeToTextField, numberOfTries; //numberoftries not used
     @FXML
     ComboBox<String> changeMusicBox;
 
     public RootController rootController;
     public static MediaPlayer backgroundMusicPlayer;
-    public static int numberFrom, numberTo;
+    public static String savedRangeFrom = "", savedRangeTo = "";
+    public static int numberRangeFrom = 0, numberRangeTo = 100;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -43,32 +43,34 @@ public class OptionsController implements Initializable {
         changeMusicBox.setValue("Video Game Level");
         changeMusicBox.setStyle("-fx-font: 15px \"Berlin Sans FB Demi\";");
 
-        rangeNumbersFrom.setPadding(new Insets(0, 30, 0, 30));
-        rangeNumbersTo.setPadding(new Insets(0, 30, 0, 30));
+        rangeFromTextField.setPadding(new Insets(0, 30, 0, 30));
+        rangeToTextField.setPadding(new Insets(0, 30, 0, 30));
         numberOfTries.setPadding(new Insets(0, 30, 0, 30));
 
-        numberFrom = Integer.parseInt(Objects.requireNonNull(rangeNumbersFrom).getText());
-        numberTo = Integer.parseInt(Objects.requireNonNull(rangeNumbersTo).getText());
+        if (!savedRangeFrom.equals("") && !savedRangeTo.equals("")) {
+            rangeFromTextField.setText(savedRangeFrom);
+            rangeToTextField.setText(savedRangeTo);
+        }
 
-        rangeNumbersFrom.textProperty().addListener(new ChangeListener<String>() {
+        rangeFromTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d*")) {
-                    rangeNumbersFrom.setText(newValue.replaceAll("[^\\d]", ""));
+                    rangeFromTextField.setText(newValue.replaceAll("[^\\d]", ""));
                 }
             }
         });
-        rangeNumbersTo.textProperty().addListener(new ChangeListener<String>() {
+        rangeToTextField.textProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
                 if (!newValue.matches("\\d*")) {
-                    rangeNumbersTo.setText(newValue.replaceAll("[^\\d]", ""));
+                    rangeToTextField.setText(newValue.replaceAll("[^\\d]", ""));
                 }
             }
         });
     }
 
-    public void changeTheMusic(ActionEvent event) {
+    public void changeTheMusicAction(ActionEvent event) {
             switch (changeMusicBox.getValue()) {
                 case "Video Game Level":
                     backgroundMusicPlayer.stop();
@@ -92,7 +94,7 @@ public class OptionsController implements Initializable {
         backgroundMusicPlayer.play();
     }
 
-    public void pauseMusic(ActionEvent event) {
+    public void pauseMusicAction(ActionEvent event) {
         boolean musicCheck = musicCheckBox.isSelected();
         if (!musicCheck) {
             backgroundMusicPlayer.pause();
@@ -100,11 +102,19 @@ public class OptionsController implements Initializable {
             backgroundMusicPlayer.play();
     }
 
-    public void saveOptions(ActionEvent event) {
-
+    public void saveOptionsAction(ActionEvent event) {
+        if (rangeFromTextField.getText().equals("") && rangeToTextField.getText().equals("")) {
+            numberRangeFrom = 0;
+            numberRangeTo = 100;
+        } else {
+            savedRangeFrom = rangeFromTextField.getText();
+            savedRangeTo = rangeToTextField.getText();
+            numberRangeFrom = Integer.parseInt(savedRangeFrom);
+            numberRangeTo = Integer.parseInt(savedRangeTo);
+        }
     }
 
-    public void backToMenu(ActionEvent event) throws IOException {
+    public void backToMenuAction(ActionEvent event) throws IOException {
         rootController.loadMenuScreen();
     }
 

@@ -4,21 +4,23 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Random;
 import java.util.ResourceBundle;
 
 public class PlayController implements Initializable {
 
+    @FXML
+    Pane playAgainPane;
     @FXML
     TextField guessNumberInputField;
     @FXML
@@ -26,7 +28,7 @@ public class PlayController implements Initializable {
 
     private RootController rootController;
     public MediaPlayer correctGuessPlayer, wrongGuessPlayer;
-    int theNumber, defaultNumberFrom = 0, defaultNumberTo = 100;
+    int theNumber;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -40,27 +42,15 @@ public class PlayController implements Initializable {
             }
         });
 
-        theNumber = random(OptionsController.numberFrom, OptionsController.numberTo);
-        System.out.println("from: " + OptionsController.numberFrom + "to: " + OptionsController.numberTo);
-
-
-        /*
-        FXMLLoader loader = new FXMLLoader();
-        OptionsController controller = loader.getController();
-        Integer rangeNumbersFrom = Integer.valueOf(controller.rangeNumbersFrom.getText());
-        Integer rangeNumbersTo = Integer.valueOf(controller.rangeNumbersTo.getText());
-
-        //int rangeNumbersFrom = Integer.parseInt(controller.rangeNumbersFrom.getText());
-        //int rangeNumbersTo = Integer.parseInt(controller.rangeNumbersTo.getText());
-        theNumber = random(rangeNumbersFrom, rangeNumbersTo); */
+        theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
+        System.out.println("from: " + OptionsController.numberRangeFrom + "\nto: " + OptionsController.numberRangeTo);
     }
 
     public static int random(int min, int max) {
-        System.out.println("this is min: " + min + "this is max: " + max);
         return (int) (min + (Math.random() * (max - min)));
     }
 
-    public void checkAction() throws InterruptedException {
+    public void checkAction() throws IOException {
 
         int guess = Integer.parseInt(guessNumberInputField.getText());
         if (guess < theNumber) {
@@ -74,7 +64,16 @@ public class PlayController implements Initializable {
         else {
             resultLabel.setText("You are correct!");
             correctSoundEffect();
+            playAgainPane.setVisible(true);
+
         }
+    }
+
+    public void playAgainAction(ActionEvent event) {
+        playAgainPane.setVisible(false);
+        theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
+        System.out.println("from: " + OptionsController.numberRangeFrom + "\nto: " + OptionsController.numberRangeTo);
+
     }
 
      public void correctSoundEffect() {
@@ -91,7 +90,7 @@ public class PlayController implements Initializable {
         wrongGuessPlayer.play();
     }
 
-    public void backToMenu(ActionEvent event) throws IOException {
+    public void backToMenuAction(ActionEvent event) throws IOException {
         rootController.loadMenuScreen();
     }
 
