@@ -1,7 +1,6 @@
 package com.javafx.controllers;
 
 import javafx.application.Platform;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -16,7 +15,7 @@ public class MenuController {
 
     private RootController rootController;
 
-    public void playAction(ActionEvent event) throws IOException {
+    public void playAction() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         Pane pane = loader.load(getClass().getResource("/com/javafx/screens/PlayScreen.fxml").openStream());
         PlayController playController = loader.getController();
@@ -24,7 +23,7 @@ public class MenuController {
         rootController.setScreen(pane);
     }
 
-    public void howToPlayAction(ActionEvent event) throws IOException {
+    public void howToPlayAction() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/HowToPlayScreen.fxml"));
         Pane pane = loader.load();
         HowToPlayController howToPlayController = loader.getController();
@@ -32,7 +31,7 @@ public class MenuController {
         rootController.setScreen(pane);
     }
 
-    public void optionsAction(ActionEvent event) throws IOException {
+    public void optionsAction() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/OptionScreen.fxml"));
         Pane pane = loader.load();
         OptionsController optionsController = loader.getController();
@@ -40,7 +39,7 @@ public class MenuController {
         rootController.setScreen(pane);
     }
 
-    public void exitAction(ActionEvent event) {
+    public void exitAction() {
         Platform.exit();
     }
 

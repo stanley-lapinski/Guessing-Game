@@ -13,6 +13,25 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757 #310757; -fx-border-color: #632689; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.OptionsController">
    <children>
       <ComboBox fx:id="changeMusicBox" layoutX="256.0" layoutY="377.0" onAction="#changeTheMusicAction" prefHeight="25.0" prefWidth="222.0" />
+      <TextField fx:id="rangeFromTextField" layoutX="84.0" layoutY="117.0" prefHeight="60.0" prefWidth="150.0" promptText="0" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+         </font></TextField>
+      <TextField fx:id="rangeToTextField" layoutX="281.0" layoutY="117.0" prefHeight="60.0" prefWidth="192.0" promptText="100" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="allowedTriesTextField" layoutX="308.0" layoutY="218.0" prefHeight="60.0" prefWidth="169.0" promptText="INFINITE" style="-fx-background-radius: 30;">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="25.0" />
+         </font></TextField>
+      <CheckBox fx:id="musicCheckBox" layoutX="55.0" layoutY="365.0" mnemonicParsing="false" onAction="#pauseMusicAction" selected="true" text="ON/OFF" textFill="WHITE">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="18.0" />
+         </font>
+      </CheckBox>
+      <Slider fx:id="musicVolumeSlider" layoutX="55.0" layoutY="441.0" prefHeight="21.0" prefWidth="183.0" showTickLabels="true" showTickMarks="true" />
       <Label layoutX="187.0" layoutY="20.0" text="OPTIONS" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="30.0" />
@@ -33,10 +52,6 @@
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
       </Label>
-      <TextField fx:id="rangeFromTextField" layoutX="84.0" layoutY="117.0" prefHeight="60.0" prefWidth="150.0" promptText="0" style="-fx-background-radius: 30;">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
-         </font></TextField>
       <Separator layoutX="22.0" layoutY="64.0" prefHeight="2.0" prefWidth="449.0" />
       <Separator layoutX="22.0" layoutY="206.0" prefHeight="2.0" prefWidth="449.0" />
       <Label layoutX="22.0" layoutY="236.0" prefHeight="24.0" prefWidth="279.0" text="NUMBER OF ALLOWED TRIES:" textFill="WHITE" wrapText="true">
@@ -54,10 +69,6 @@
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="numberOfTries" layoutX="308.0" layoutY="218.0" prefHeight="60.0" prefWidth="169.0" promptText="INFINITE" style="-fx-background-radius: 30;">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="25.0" />
-         </font></TextField>
       <Label layoutX="340.0" layoutY="278.0" text="(FROM 1 TO 100)" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
@@ -69,22 +80,12 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <TextField fx:id="rangeToTextField" layoutX="281.0" layoutY="117.0" prefHeight="60.0" prefWidth="192.0" promptText="100" style="-fx-background-radius: 30;">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
-         </font></TextField>
       <Separator layoutX="23.0" layoutY="309.0" prefHeight="2.0" prefWidth="449.0" />
       <Label layoutX="29.0" layoutY="320.0" prefHeight="24.0" prefWidth="75.0" text="MUSIC:" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <CheckBox fx:id="musicCheckBox" layoutX="55.0" layoutY="365.0" mnemonicParsing="false" onAction="#pauseMusicAction" selected="true" text="ON/OFF" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="18.0" />
-         </font>
-      </CheckBox>
-      <Slider fx:id="musicVolumeSlider" layoutX="55.0" layoutY="441.0" prefHeight="21.0" prefWidth="183.0" showTickLabels="true" showTickMarks="true" />
       <Label layoutX="72.0" layoutY="417.0" prefHeight="24.0" prefWidth="150.0" text="MUSIC VOLUME:" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />

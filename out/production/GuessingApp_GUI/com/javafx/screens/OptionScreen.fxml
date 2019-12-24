@@ -54,7 +54,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="numberOfTries" layoutX="308.0" layoutY="218.0" prefHeight="60.0" prefWidth="169.0" promptText="INFINITE" style="-fx-background-radius: 30;">
+      <TextField fx:id="allowedTriesTextField" layoutX="308.0" layoutY="218.0" prefHeight="60.0" prefWidth="169.0" promptText="INFINITE" style="-fx-background-radius: 30;">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="25.0" />
          </font></TextField>

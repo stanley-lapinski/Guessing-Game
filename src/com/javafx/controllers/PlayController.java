@@ -2,7 +2,6 @@ package com.javafx.controllers;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -29,6 +28,7 @@ public class PlayController implements Initializable {
     private RootController rootController;
     public MediaPlayer correctGuessPlayer, wrongGuessPlayer;
     int theNumber;
+    double checkNumberOfGuesses = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -41,39 +41,42 @@ public class PlayController implements Initializable {
                 }
             }
         });
-
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
-        System.out.println("from: " + OptionsController.numberRangeFrom + "\nto: " + OptionsController.numberRangeTo);
     }
 
     public static int random(int min, int max) {
         return (int) (min + (Math.random() * (max - min)));
     }
 
-    public void checkAction() throws IOException {
+    public void checkAction() {
 
-        int guess = Integer.parseInt(guessNumberInputField.getText());
-        if (guess < theNumber) {
-            resultLabel.setText("Your number is too low");
-            wrongSoundEffect();
-        }
-        else if (guess > theNumber) {
-            resultLabel.setText("Your number is too high");
-            wrongSoundEffect();
-        }
-        else {
-            resultLabel.setText("You are correct!");
-            correctSoundEffect();
+        checkNumberOfGuesses++;
+        if (checkNumberOfGuesses < OptionsController.numberOfAllowedTries) {
+            int guess = Integer.parseInt(guessNumberInputField.getText());
+            if (guess < theNumber) {
+                resultLabel.setText("Your number is too low");
+                wrongSoundEffect();
+            } else if (guess > theNumber) {
+                resultLabel.setText("Your number is too high");
+                wrongSoundEffect();
+            } else {
+                resultLabel.setText("You are correct!");
+                correctSoundEffect();
+                playAgainPane.setVisible(true);
+                checkNumberOfGuesses = 0;
+            }
+        } else {
+            resultLabel.setText("You lost...");
             playAgainPane.setVisible(true);
-
+            checkNumberOfGuesses = 0;
         }
     }
 
-    public void playAgainAction(ActionEvent event) {
+    public void playAgainAction() {
         playAgainPane.setVisible(false);
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
-        System.out.println("from: " + OptionsController.numberRangeFrom + "\nto: " + OptionsController.numberRangeTo);
-
+        resultLabel.setText("");
+        guessNumberInputField.setText("");
     }
 
      public void correctSoundEffect() {
@@ -90,7 +93,7 @@ public class PlayController implements Initializable {
         wrongGuessPlayer.play();
     }
 
-    public void backToMenuAction(ActionEvent event) throws IOException {
+    public void backToMenuAction() throws IOException {
         rootController.loadMenuScreen();
     }
 
