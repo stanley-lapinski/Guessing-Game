@@ -18,6 +18,10 @@ import java.util.ResourceBundle;
 
 public class PlayController implements Initializable {
 
+    /**
+     * some images for winning and loosing would make it better...
+     */
+
     @FXML
     Pane playAgainPane;
     @FXML

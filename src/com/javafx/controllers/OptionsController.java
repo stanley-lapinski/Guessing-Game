@@ -1,5 +1,7 @@
 package com.javafx.controllers;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -18,7 +20,7 @@ import java.util.ResourceBundle;
 public class OptionsController implements Initializable {
 
     /**
-     * Musimy dodać możliwości  wypełnienia tylko jednego z pól. Teraz zakładamy że wszystkie pola są wypełniane jednocześnie
+     * cooperation between checkbox and savebutton needs to be fixed
      */
 
     @FXML
@@ -33,6 +35,7 @@ public class OptionsController implements Initializable {
     public RootController rootController;
     public static MediaPlayer backgroundMusicPlayer;
     public static String savedRangeFrom = "", savedRangeTo = "", savedAllowedTries = "";
+    public static boolean savedMusicCheckBox = true;
     public static int numberRangeFrom = 0, numberRangeTo = 100;
     public static double numberOfAllowedTries = Double.POSITIVE_INFINITY;
 
@@ -49,20 +52,27 @@ public class OptionsController implements Initializable {
         rangeToTextField.setPadding(new Insets(0, 30, 0, 30));
         allowedTriesTextField.setPadding(new Insets(0, 30, 0, 30));
 
-        if (!savedRangeFrom.equals("") && !savedRangeTo.equals("")) {
-            rangeFromTextField.setText(savedRangeFrom);
-            rangeToTextField.setText(savedRangeTo);
-            allowedTriesTextField.setText(savedAllowedTries);
-        }
+        rangeFromTextField.setText(savedRangeFrom);
+        rangeToTextField.setText(savedRangeTo);
+        allowedTriesTextField.setText(savedAllowedTries);
+        musicCheckBox.setSelected(savedMusicCheckBox);
 
-        rangeFromTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+        rangeFromTextField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 rangeFromTextField.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
-        rangeToTextField.textProperty().addListener((observable, oldValue, newValue) -> {
+        rangeToTextField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
                 rangeToTextField.setText(newValue.replaceAll("[^\\d]", ""));
+            }
+        });
+        allowedTriesTextField.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
+                if (!newValue.matches("\\d*")) {
+                    allowedTriesTextField.setText(newValue.replaceAll("[^\\d]",""));
+                }
             }
         });
     }
@@ -100,18 +110,19 @@ public class OptionsController implements Initializable {
     }
 
     public void saveOptionsAction() {
-        if (rangeFromTextField.getText().equals("") && rangeToTextField.getText().equals("") && allowedTriesTextField.getText().equals("")) {
-            numberRangeFrom = 0;
-            numberRangeTo = 100;
-            numberOfAllowedTries = Double.POSITIVE_INFINITY;
-        } else {
-            savedRangeFrom = rangeFromTextField.getText();
-            savedRangeTo = rangeToTextField.getText();
-            savedAllowedTries = allowedTriesTextField.getText();
-            numberRangeFrom = Integer.parseInt(savedRangeFrom);
-            numberRangeTo = Integer.parseInt(savedRangeTo);
-            numberOfAllowedTries = Integer.parseInt(savedAllowedTries);
-        }
+        savedRangeFrom = rangeFromTextField.getText();
+        savedRangeTo = rangeToTextField.getText();
+        savedAllowedTries = allowedTriesTextField.getText();
+        savedMusicCheckBox = musicCheckBox.isSelected();
+
+        if (rangeFromTextField.getText().equals("")) { numberRangeFrom = 0; }
+        else { numberRangeFrom = Integer.parseInt(savedRangeFrom); }
+
+        if (rangeToTextField.getText().equals("")) {numberRangeTo = 100;}
+        else { numberRangeTo = Integer.parseInt(savedRangeTo); }
+
+        if (allowedTriesTextField.getText().equals("")) {numberOfAllowedTries = Double.POSITIVE_INFINITY;}
+        else { numberOfAllowedTries = Integer.parseInt(savedAllowedTries); }
     }
 
     public void backToMenuAction() throws IOException {
