@@ -1,7 +1,5 @@
 package com.javafx.controllers;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -18,10 +16,6 @@ import java.nio.file.Paths;
 import java.util.ResourceBundle;
 
 public class OptionsController implements Initializable {
-
-    /**
-     * cooperation between checkbox and savebutton needs to be fixed
-     */
 
     @FXML
     CheckBox musicCheckBox;
@@ -67,12 +61,9 @@ public class OptionsController implements Initializable {
                 rangeToTextField.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
-        allowedTriesTextField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    allowedTriesTextField.setText(newValue.replaceAll("[^\\d]",""));
-                }
+        allowedTriesTextField.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                allowedTriesTextField.setText(newValue.replaceAll("[^\\d]",""));
             }
         });
     }
@@ -113,7 +104,6 @@ public class OptionsController implements Initializable {
         savedRangeFrom = rangeFromTextField.getText();
         savedRangeTo = rangeToTextField.getText();
         savedAllowedTries = allowedTriesTextField.getText();
-        savedMusicCheckBox = musicCheckBox.isSelected();
 
         if (rangeFromTextField.getText().equals("")) { numberRangeFrom = 0; }
         else { numberRangeFrom = Integer.parseInt(savedRangeFrom); }
@@ -126,6 +116,7 @@ public class OptionsController implements Initializable {
     }
 
     public void backToMenuAction() throws IOException {
+        savedMusicCheckBox = musicCheckBox.isSelected();
         rootController.loadMenuScreen();
     }
 

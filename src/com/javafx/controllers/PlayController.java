@@ -1,7 +1,5 @@
 package com.javafx.controllers;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
@@ -30,19 +28,16 @@ public class PlayController implements Initializable {
     Label resultLabel;
 
     private RootController rootController;
-    public MediaPlayer correctGuessPlayer, wrongGuessPlayer;
+    public MediaPlayer correctGuessPlayer, wrongGuessPlayer, gameOverPlayer;
     int theNumber;
     double checkNumberOfGuesses = 0;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         guessNumberInputField.setPadding(new Insets(0, 30, 0, 30));
-        guessNumberInputField.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String oldValue, String newValue) {
-                if (!newValue.matches("\\d*")) {
-                    guessNumberInputField.setText(newValue.replaceAll("[^\\d]", ""));
-                }
+        guessNumberInputField.textProperty().addListener((observableValue, oldValue, newValue) -> {
+            if (!newValue.matches("\\d*")) {
+                guessNumberInputField.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
@@ -52,25 +47,25 @@ public class PlayController implements Initializable {
         return (int) (min + (Math.random() * (max - min)));
     }
 
-    public void checkAction() {
-
+    public void checkAction() throws InterruptedException {
         checkNumberOfGuesses++;
         if (checkNumberOfGuesses < OptionsController.numberOfAllowedTries) {
             int guess = Integer.parseInt(guessNumberInputField.getText());
             if (guess < theNumber) {
-                resultLabel.setText("Your number is too low");
-                wrongSoundEffect();
+                resultLabel.setText("Too low");
+                wrongGuessSoundEffect();
             } else if (guess > theNumber) {
-                resultLabel.setText("Your number is too high");
-                wrongSoundEffect();
+                resultLabel.setText("Too high");
+                wrongGuessSoundEffect();
             } else {
-                resultLabel.setText("You are correct!");
-                correctSoundEffect();
+                resultLabel.setText("Correct!\nYou win!");
+                correctGuessSoundEffect();
                 playAgainPane.setVisible(true);
                 checkNumberOfGuesses = 0;
             }
         } else {
-            resultLabel.setText("You lost...");
+            resultLabel.setText("You loose...");
+            gameOverSoundEffect();
             playAgainPane.setVisible(true);
             checkNumberOfGuesses = 0;
         }
@@ -83,18 +78,26 @@ public class PlayController implements Initializable {
         guessNumberInputField.setText("");
     }
 
-     public void correctSoundEffect() {
+     public void correctGuessSoundEffect() {
         String correctGuessFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess2.mp3";
         Media correctGuessSound = new Media(new File(correctGuessFilePath).toURI().toString());
         correctGuessPlayer = new MediaPlayer(correctGuessSound);
         correctGuessPlayer.play();
     }
 
-    public void wrongSoundEffect() {
+    public void wrongGuessSoundEffect() {
         String wrongGuessFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/wrongGuess.mp3";
         Media wrongGuessSound = new Media(new File(wrongGuessFilePath).toURI().toString());
         wrongGuessPlayer = new MediaPlayer(wrongGuessSound);
         wrongGuessPlayer.play();
+    }
+
+    public void gameOverSoundEffect() {
+        String gameOverFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameOver.mp3";
+        Media gameOverSound = new Media(new File(gameOverFilePath).toURI().toString());
+        gameOverPlayer = new MediaPlayer(gameOverSound);
+        gameOverPlayer.play();
+
     }
 
     public void backToMenuAction() throws IOException {

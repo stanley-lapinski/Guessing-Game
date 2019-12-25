@@ -32,8 +32,8 @@ public class MenuController {
     }
 
     public void optionsAction() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/OptionScreen.fxml"));
-        Pane pane = loader.load();
+        FXMLLoader loader = new FXMLLoader();
+        Pane pane = loader.load(getClass().getResource("/com/javafx/screens/OptionScreen.fxml").openStream());
         OptionsController optionsController = loader.getController();
         optionsController.setRootController(rootController);
         rootController.setScreen(pane);
