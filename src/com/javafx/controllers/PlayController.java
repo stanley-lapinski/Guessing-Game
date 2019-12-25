@@ -17,7 +17,7 @@ import java.util.ResourceBundle;
 public class PlayController implements Initializable {
 
     /**
-     * some images for winning and loosing would make it better...
+     * Enter send user back to menu...
      */
 
     @FXML
@@ -47,7 +47,7 @@ public class PlayController implements Initializable {
         return (int) (min + (Math.random() * (max - min)));
     }
 
-    public void checkAction() throws InterruptedException {
+    public void checkAction() {
         checkNumberOfGuesses++;
         if (checkNumberOfGuesses < OptionsController.numberOfAllowedTries) {
             int guess = Integer.parseInt(guessNumberInputField.getText());
@@ -71,6 +71,13 @@ public class PlayController implements Initializable {
         }
     }
 
+    public void onEnter() {
+        if (!playAgainPane.isVisible())
+            checkAction();
+        else
+            playAgainAction();
+    }
+
     public void playAgainAction() {
         playAgainPane.setVisible(false);
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
@@ -78,7 +85,7 @@ public class PlayController implements Initializable {
         guessNumberInputField.setText("");
     }
 
-     public void correctGuessSoundEffect() {
+    public void correctGuessSoundEffect() {
         String correctGuessFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess2.mp3";
         Media correctGuessSound = new Media(new File(correctGuessFilePath).toURI().toString());
         correctGuessPlayer = new MediaPlayer(correctGuessSound);

@@ -13,9 +13,13 @@ public class Main extends Application {
 
     private double x, y;
 
+    public static void main(String[] args) {
+        launch(args);
+    }
+
     @Override
     public void start(Stage primaryStage) throws Exception{
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/RootScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/rootScreen.fxml"));
         StackPane rootStackPane = loader.load();
         Scene scene = new Scene(rootStackPane);
         primaryStage.setScene(scene);
@@ -34,9 +38,5 @@ public class Main extends Application {
 
         primaryStage.show();
         OptionsController.backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }

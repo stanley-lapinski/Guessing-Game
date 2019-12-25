@@ -69,20 +69,20 @@ public class OptionsController implements Initializable {
     }
 
     public void changeTheMusicAction() {
-            switch (changeMusicBox.getValue()) {
-                case "Video Game Level":
-                    backgroundMusicPlayer.stop();
-                    backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
-                    break;
-                case "Walk through Meadow":
-                    backgroundMusicPlayer.stop();
-                    backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic2.mp3");
-                    break;
-                case "Discovering New Place":
-                    backgroundMusicPlayer.stop();
-                    backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic3.mp3");
-                    break;
-            }
+        switch (changeMusicBox.getValue()) {
+            case "Video Game Level":
+                backgroundMusicPlayer.stop();
+                backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
+                break;
+            case "Walk through Meadow":
+                backgroundMusicPlayer.stop();
+                backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic2.mp3");
+                break;
+            case "Discovering New Place":
+                backgroundMusicPlayer.stop();
+                backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic3.mp3");
+                break;
+        }
     }
 
     public static void backgroundMusic(String backgroundMusicPath) {

@@ -9,20 +9,6 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757; -fx-border-color: #632689; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.PlayController">
    <children>
-      <Label layoutX="45.0" layoutY="78.0" text="YOUR NUMBER :" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
-         </font>
-      </Label>
-      <TextField fx:id="guessNumberInputField" layoutX="280.0" layoutY="64.0" prefHeight="64.0" prefWidth="176.0" style="-fx-background-radius: 30;">
-         <font>
-            <Font name="Berlin Sans FB Demi Bold" size="28.0" />
-         </font></TextField>
-      <Button layoutX="150.0" layoutY="150.0" mnemonicParsing="false" onAction="#checkAction" prefHeight="78.0" prefWidth="211.0" style="-fx-background-color: #632689;" text="CHECK!" textFill="WHITE">
-         <font>
-            <Font name="Berlin Sans FB Bold" size="36.0" />
-         </font>
-      </Button>
       <Separator layoutX="27.0" layoutY="504.0" prefHeight="2.0" prefWidth="449.0" />
       <Button layoutX="176.0" layoutY="523.0" mnemonicParsing="false" onAction="#backToMenuAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
          <font>
@@ -34,6 +20,25 @@
             <Font name="Berlin Sans FB Demi Bold" size="36.0" />
          </font>
       </Label>
+      <Pane layoutX="35.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="430.0" style="-fx-background-color: #310757 #310757;">
+         <children>
+            <Button layoutX="110.0" layoutY="108.0" mnemonicParsing="false" onAction="#checkAction" prefHeight="78.0" prefWidth="211.0" style="-fx-background-color: #632689;" text="CHECK!" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Bold" size="36.0" />
+               </font>
+            </Button>
+            <Label layoutX="22.0" layoutY="44.0" text="YOUR NUMBER :" textFill="WHITE">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+               </font>
+            </Label>
+            <TextField fx:id="guessNumberInputField" layoutX="240.0" layoutY="28.0" onAction="#onEnter" prefHeight="64.0" prefWidth="176.0" style="-fx-background-radius: 30;">
+               <font>
+                  <Font name="Berlin Sans FB Demi Bold" size="28.0" />
+               </font>
+            </TextField>
+         </children>
+      </Pane>
       <Pane fx:id="playAgainPane" layoutX="35.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="430.0" style="-fx-background-color: #310757 #310757;" visible="false">
          <children>
             <Button layoutX="110.0" layoutY="149.0" mnemonicParsing="false" onAction="#playAgainAction" prefHeight="78.0" prefWidth="211.0" style="-fx-background-color: #632689;" text="PLAY AGAIN" textFill="WHITE">

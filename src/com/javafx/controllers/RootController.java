@@ -17,7 +17,7 @@ public class RootController {
     }
 
     public void loadMenuScreen() throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/MenuScreen.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/menuScreen.fxml"));
         Pane pane = loader.load();
         MenuController menuController = loader.getController();
         menuController.setRootController(this);
