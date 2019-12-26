@@ -16,10 +16,6 @@ import java.util.ResourceBundle;
 
 public class PlayController implements Initializable {
 
-    /**
-     * Enter send user back to menu...
-     */
-
     @FXML
     Pane playAgainPane;
     @FXML
@@ -48,7 +44,6 @@ public class PlayController implements Initializable {
     }
 
     public void checkAction() {
-        checkNumberOfGuesses++;
         if (checkNumberOfGuesses < OptionsController.numberOfAllowedTries) {
             int guess = Integer.parseInt(guessNumberInputField.getText());
             if (guess < theNumber) {
@@ -69,6 +64,7 @@ public class PlayController implements Initializable {
             playAgainPane.setVisible(true);
             checkNumberOfGuesses = 0;
         }
+        checkNumberOfGuesses++;
     }
 
     public void onEnter() {
