@@ -24,9 +24,13 @@ public class PlayController implements Initializable {
     Label resultLabel;
 
     private RootController rootController;
-    public MediaPlayer correctGuessPlayer, wrongGuessPlayer, gameOverPlayer;
-    int theNumber;
-    double checkNumberOfGuesses = 0;
+    private MediaPlayer correctGuessPlayer, wrongGuessPlayer, gameOverPlayer;
+    private int theNumber;
+    private double checkNumberOfGuesses = 0;
+
+    public static int random(int min, int max) {
+        return (int) (min + (Math.random() * (max - min)));
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -37,10 +41,6 @@ public class PlayController implements Initializable {
             }
         });
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
-    }
-
-    public static int random(int min, int max) {
-        return (int) (min + (Math.random() * (max - min)));
     }
 
     public void checkAction() {

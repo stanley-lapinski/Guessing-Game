@@ -26,12 +26,19 @@ public class OptionsController implements Initializable {
     @FXML
     ComboBox<String> changeMusicBox;
 
-    public RootController rootController;
-    public static MediaPlayer backgroundMusicPlayer;
-    public static String savedRangeFrom = "", savedRangeTo = "", savedAllowedTries = "";
-    public static boolean savedMusicCheckBox = true;
     public static int numberRangeFrom = 0, numberRangeTo = 100;
     public static double numberOfAllowedTries = Double.POSITIVE_INFINITY;
+    private static MediaPlayer backgroundMusicPlayer;
+    private static String savedRangeFrom = "", savedRangeTo = "", savedAllowedTries = "";
+    private static boolean savedMusicCheckBox = true;
+    private RootController rootController;
+
+    public static void backgroundMusic(String backgroundMusicPath) {
+        Media backgroundMusic = new Media(Paths.get(backgroundMusicPath).toUri().toString());
+        backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
+        backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        backgroundMusicPlayer.play();
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -83,13 +90,6 @@ public class OptionsController implements Initializable {
                 backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic3.mp3");
                 break;
         }
-    }
-
-    public static void backgroundMusic(String backgroundMusicPath) {
-        Media backgroundMusic = new Media(Paths.get(backgroundMusicPath).toUri().toString());
-        backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
-        backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        backgroundMusicPlayer.play();
     }
 
     public void pauseMusicAction() {
