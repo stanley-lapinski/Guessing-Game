@@ -24,7 +24,7 @@ public class PlayController implements Initializable {
     Label resultLabel;
 
     private RootController rootController;
-    private MediaPlayer correctGuessPlayer, wrongGuessPlayer, gameOverPlayer;
+    public MediaPlayer correctGuessPlayer, wrongGuessPlayer, gameOverPlayer;
     private int theNumber;
     private double checkNumberOfGuesses = 0;
 
@@ -54,6 +54,7 @@ public class PlayController implements Initializable {
                 wrongGuessSoundEffect();
             } else {
                 resultLabel.setText("Correct!\nYou win!");
+                OptionsController.backgroundMusicPlayer.stop();
                 correctGuessSoundEffect();
                 playAgainPane.setVisible(true);
                 checkNumberOfGuesses = 0;
@@ -76,6 +77,8 @@ public class PlayController implements Initializable {
 
     public void playAgainAction() {
         playAgainPane.setVisible(false);
+        OptionsController.backgroundMusicPlayer.play();
+        correctGuessPlayer.stop();
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
         resultLabel.setText("");
         guessNumberInputField.setText("");

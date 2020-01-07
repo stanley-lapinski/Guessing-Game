@@ -28,12 +28,12 @@ public class OptionsController implements Initializable {
 
     public static int numberRangeFrom = 0, numberRangeTo = 100;
     public static double numberOfAllowedTries = Double.POSITIVE_INFINITY;
-    private static MediaPlayer backgroundMusicPlayer;
+    protected static MediaPlayer backgroundMusicPlayer;
     private static String savedRangeFrom = "", savedRangeTo = "", savedAllowedTries = "";
     private static boolean savedMusicCheckBox = true;
     private RootController rootController;
 
-    public static void backgroundMusic(String backgroundMusicPath) {
+    public static void backgroundMusic(String backgroundMusicPath) throws InterruptedException {
         Media backgroundMusic = new Media(Paths.get(backgroundMusicPath).toUri().toString());
         backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
         backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
@@ -75,7 +75,7 @@ public class OptionsController implements Initializable {
         });
     }
 
-    public void changeTheMusicAction() {
+    public void changeTheMusicAction() throws InterruptedException {
         switch (changeMusicBox.getValue()) {
             case "Video Game Level":
                 backgroundMusicPlayer.stop();
