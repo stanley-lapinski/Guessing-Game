@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
@@ -48,5 +50,10 @@
             </Button>
          </children>
       </Pane>
+      <ImageView layoutX="176.0" layoutY="275.0">
+         <image>
+            <Image url="@../images/output-onlinepngtools.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
