@@ -42,7 +42,7 @@ public class PlayController implements Initializable {
         });
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
         if (!(OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY))
-            resultLabel.setText("Watch out! You have only " + (int)OptionsController.numberOfAllowedGuesses + " guesses...");
+            resultLabel.setText("Watch out!\nYou have only " + (int)OptionsController.numberOfAllowedGuesses + " guesses.");
         System.out.println(theNumber);
     }
 
@@ -94,7 +94,10 @@ public class PlayController implements Initializable {
     public void playAgainAction() {
         endGameMusic();
         playAgainPane.setVisible(false);
-        resultLabel.setText("");
+        if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
+            resultLabel.setText("");
+        else
+            resultLabel.setText("You regained your " + (int)OptionsController.numberOfAllowedGuesses + " guesses.");
         guessNumberInputField.setText("");
         checkNumberOfGuesses = 0;
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
