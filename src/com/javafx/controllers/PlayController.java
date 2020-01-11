@@ -47,10 +47,10 @@ public class PlayController implements Initializable {
         if (checkNumberOfGuesses < OptionsController.numberOfAllowedTries) {
             int guess = Integer.parseInt(guessNumberInputField.getText());
             if (guess < theNumber) {
-                resultLabel.setText("Too low");
+                resultLabel.setText("Too low!");
                 wrongGuessSoundEffect();
             } else if (guess > theNumber) {
-                resultLabel.setText("Too high");
+                resultLabel.setText("Too high!");
                 wrongGuessSoundEffect();
             } else {
                 resultLabel.setText("Correct!\nYou win!");
