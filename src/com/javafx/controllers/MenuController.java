@@ -16,8 +16,8 @@ public class MenuController {
     private RootController rootController;
 
     public void playAction() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        Pane pane = loader.load(getClass().getResource("/com/javafx/screens/playScreen.fxml").openStream());
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/playScreen.fxml"));
+        Pane pane = loader.load();
         PlayController playController = loader.getController();
         playController.setRootController(rootController);
         rootController.setScreen(pane);

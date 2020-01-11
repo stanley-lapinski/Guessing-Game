@@ -27,7 +27,7 @@ public class OptionsController implements Initializable {
     ComboBox<String> changeMusicBox;
 
     public static int numberRangeFrom = 0, numberRangeTo = 100;
-    public static double numberOfAllowedTries = Double.POSITIVE_INFINITY;
+    public static double numberOfAllowedGuesses = Double.POSITIVE_INFINITY;
     protected static MediaPlayer backgroundMusicPlayer;
     private static String savedRangeFrom = "", savedRangeTo = "", savedAllowedTries = "";
     private static boolean savedMusicCheckBox = true;
@@ -111,8 +111,8 @@ public class OptionsController implements Initializable {
         if (rangeToTextField.getText().equals("")) {numberRangeTo = 100;}
         else { numberRangeTo = Integer.parseInt(savedRangeTo); }
 
-        if (allowedTriesTextField.getText().equals("")) {numberOfAllowedTries = Double.POSITIVE_INFINITY;}
-        else { numberOfAllowedTries = Integer.parseInt(savedAllowedTries); }
+        if (allowedTriesTextField.getText().equals("")) {numberOfAllowedGuesses = Double.POSITIVE_INFINITY;}
+        else { numberOfAllowedGuesses = Integer.parseInt(savedAllowedTries); }
     }
 
     public void backToMenuAction() throws IOException {

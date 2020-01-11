@@ -41,31 +41,47 @@ public class PlayController implements Initializable {
             }
         });
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
+        if (!(OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY))
+            resultLabel.setText("Watch out! You have only " + (int)OptionsController.numberOfAllowedGuesses + " guesses...");
+        System.out.println(theNumber);
     }
 
     public void checkAction() {
-        if (checkNumberOfGuesses < OptionsController.numberOfAllowedTries) {
-            int guess = Integer.parseInt(guessNumberInputField.getText());
-            if (guess < theNumber) {
-                resultLabel.setText("Too low!");
-                wrongGuessSoundEffect();
-            } else if (guess > theNumber) {
-                resultLabel.setText("Too high!");
-                wrongGuessSoundEffect();
-            } else {
-                resultLabel.setText("Correct!\nYou win!");
-                OptionsController.backgroundMusicPlayer.stop();
-                correctGuessSoundEffect();
-                playAgainPane.setVisible(true);
-                checkNumberOfGuesses = 0;
-            }
-        } else {
-            resultLabel.setText("You loose...");
-            gameOverSoundEffect();
-            playAgainPane.setVisible(true);
-            checkNumberOfGuesses = 0;
+        if (guessNumberInputField.getText().equals("")) {
+            resultLabel.setText("Please enter a valid number...");
+            wrongGuessSoundEffect();
         }
-        checkNumberOfGuesses++;
+        else {
+            int guess = Integer.parseInt(guessNumberInputField.getText());
+            checkNumberOfGuesses++;
+            if (checkNumberOfGuesses == OptionsController.numberOfAllowedGuesses) {
+                resultLabel.setText("You loose...");
+                OptionsController.backgroundMusicPlayer.stop();
+                gameOverSoundEffect();
+                playAgainPane.setVisible(true);
+            } else {
+                if (guess < theNumber) {
+                    if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
+                        resultLabel.setText("Too low!");
+                    else
+                        resultLabel.setText("Too low!\nNumber of guesses left: "
+                                + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses));
+                    wrongGuessSoundEffect();
+                } else if (guess > theNumber) {
+                    if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
+                        resultLabel.setText("Too high!");
+                    else
+                        resultLabel.setText("Too high!\nNumber of guesses left: "
+                                + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses));
+                    wrongGuessSoundEffect();
+                } else {
+                    resultLabel.setText("Correct!\nYou win!");
+                    OptionsController.backgroundMusicPlayer.stop();
+                    correctGuessSoundEffect();
+                    playAgainPane.setVisible(true);
+                }
+            }
+        }
     }
 
     public void onEnter() {
@@ -76,12 +92,31 @@ public class PlayController implements Initializable {
     }
 
     public void playAgainAction() {
+        endGameMusic();
         playAgainPane.setVisible(false);
-        OptionsController.backgroundMusicPlayer.play();
-        correctGuessPlayer.stop();
-        theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
         resultLabel.setText("");
         guessNumberInputField.setText("");
+        checkNumberOfGuesses = 0;
+        theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
+        System.out.println(theNumber);
+    }
+
+    public void backToMenuAction() throws IOException {
+        if (playAgainPane.isVisible())
+            endGameMusic();
+        rootController.loadMenuScreen();
+    }
+
+    private void endGameMusic() {
+        OptionsController.backgroundMusicPlayer.play();
+        try {
+            if (wrongGuessPlayer.getStatus() == MediaPlayer.Status.PLAYING)
+                wrongGuessPlayer.stop();
+        } catch (NullPointerException ignored) {}
+        try {
+            if (correctGuessPlayer.getStatus() == MediaPlayer.Status.PLAYING)
+                correctGuessPlayer.stop();
+        } catch (NullPointerException ignored) {}
     }
 
     public void correctGuessSoundEffect() {
@@ -103,11 +138,6 @@ public class PlayController implements Initializable {
         Media gameOverSound = new Media(new File(gameOverFilePath).toURI().toString());
         gameOverPlayer = new MediaPlayer(gameOverSound);
         gameOverPlayer.play();
-
-    }
-
-    public void backToMenuAction() throws IOException {
-        rootController.loadMenuScreen();
     }
 
     public void setRootController(RootController rootController) {
