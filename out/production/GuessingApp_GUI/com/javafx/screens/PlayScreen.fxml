@@ -17,9 +17,14 @@
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
       </Button>
-      <Label fx:id="resultLabel" alignment="CENTER" layoutX="26.0" layoutY="385.0" prefHeight="104.0" prefWidth="449.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+      <Label fx:id="resultLabel" alignment="BOTTOM_CENTER" layoutX="26.0" layoutY="390.0" prefHeight="64.0" prefWidth="449.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="resultLabelLimited" alignment="CENTER" layoutX="26.0" layoutY="454.0" prefHeight="50.0" prefWidth="449.0" textAlignment="CENTER" textFill="WHITE" wrapText="true">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
       <Pane layoutX="35.0" layoutY="25.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="430.0" style="-fx-background-color: #310757 #310757;">
@@ -50,12 +55,12 @@
             </Button>
          </children>
       </Pane>
-      <ImageView fx:id="tooLowImage" fitHeight="170.0" fitWidth="149.0" layoutX="177.0" layoutY="220.0" visible="false">
+      <ImageView fx:id="tooLowImage" fitHeight="170.0" fitWidth="149.0" layoutX="177.0" layoutY="225.0" visible="false">
          <image>
             <Image url="@../images/tooLowPurple.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="tooHighImage" fitHeight="170.0" fitWidth="149.0" layoutX="177.0" layoutY="220.0" visible="false">
+      <ImageView fx:id="tooHighImage" fitHeight="170.0" fitWidth="149.0" layoutX="177.0" layoutY="225.0" visible="false">
          <image>
             <Image url="@../images/tooHighPurple.png" />
          </image>
