@@ -13,6 +13,7 @@ It's a simple game based on high-low mechanic. Your task is to guess the number 
 - JavaFX
 - Media Player
 - Multi layered windows
+- regex
 
 
 **Screen shots:**
