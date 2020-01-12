@@ -5,6 +5,7 @@ import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -16,6 +17,8 @@ import java.util.ResourceBundle;
 
 public class PlayController implements Initializable {
 
+    @FXML
+    ImageView tooLowImage, tooHighImage;
     @FXML
     Pane playAgainPane;
     @FXML
@@ -55,32 +58,41 @@ public class PlayController implements Initializable {
         else {
             int guess = Integer.parseInt(guessNumberInputField.getText());
             checkNumberOfGuesses++;
-            if (checkNumberOfGuesses == OptionsController.numberOfAllowedGuesses) {
+            if (guess == theNumber) {
+                resultLabel.setText("Correct!\nYou win!");
+                OptionsController.backgroundMusicPlayer.stop();
+                correctGuessSoundEffect();
+                tooHighImage.setVisible(false);
+                tooLowImage.setVisible(false);
+                playAgainPane.setVisible(true);
+            }
+            else if (checkNumberOfGuesses == OptionsController.numberOfAllowedGuesses) {
                 resultLabel.setText("You loose...");
                 OptionsController.backgroundMusicPlayer.stop();
                 gameOverSoundEffect();
+                tooHighImage.setVisible(false);
+                tooLowImage.setVisible(false);
                 playAgainPane.setVisible(true);
-            } else {
-                if (guess < theNumber) {
-                    if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
-                        resultLabel.setText("Too low!");
-                    else
-                        resultLabel.setText("Too low!\nNumber of guesses left: "
-                                + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses));
-                    wrongGuessSoundEffect();
-                } else if (guess > theNumber) {
-                    if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
-                        resultLabel.setText("Too high!");
-                    else
-                        resultLabel.setText("Too high!\nNumber of guesses left: "
-                                + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses));
-                    wrongGuessSoundEffect();
-                } else {
-                    resultLabel.setText("Correct!\nYou win!");
-                    OptionsController.backgroundMusicPlayer.stop();
-                    correctGuessSoundEffect();
-                    playAgainPane.setVisible(true);
-                }
+            }
+            else if (guess < theNumber) {
+                if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
+                    resultLabel.setText("Too low!");
+                else
+                    resultLabel.setText("Too low!\nNumber of guesses left: "
+                            + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses));
+                tooHighImage.setVisible(false);
+                tooLowImage.setVisible(true);
+                wrongGuessSoundEffect();
+            }
+            else {
+                if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
+                    resultLabel.setText("Too high!");
+                else
+                    resultLabel.setText("Too high!\nNumber of guesses left: "
+                            + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses));
+                tooHighImage.setVisible(true);
+                tooLowImage.setVisible(false);
+                wrongGuessSoundEffect();
             }
         }
     }
