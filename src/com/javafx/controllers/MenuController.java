@@ -15,7 +15,8 @@ public class MenuController {
 
     private RootController rootController;
 
-    public void playAction() throws IOException {
+    @FXML
+    private void playAction() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/playScreen.fxml"));
         Pane pane = loader.load();
         PlayController playController = loader.getController();
@@ -23,7 +24,8 @@ public class MenuController {
         rootController.setScreen(pane);
     }
 
-    public void howToPlayAction() throws IOException {
+    @FXML
+    private void howToPlayAction() throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/howToPlayScreen.fxml"));
         Pane pane = loader.load();
         HowToPlayController howToPlayController = loader.getController();
@@ -31,15 +33,17 @@ public class MenuController {
         rootController.setScreen(pane);
     }
 
-    public void optionsAction() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        Pane pane = loader.load(getClass().getResource("/com/javafx/screens/optionScreen.fxml").openStream());
+    @FXML
+    private void optionsAction() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/javafx/screens/optionScreen.fxml"));
+        Pane pane = loader.load();
         OptionsController optionsController = loader.getController();
         optionsController.setRootController(rootController);
         rootController.setScreen(pane);
     }
 
-    public void exitAction() {
+    @FXML
+    private void exitAction() {
         Platform.exit();
     }
 

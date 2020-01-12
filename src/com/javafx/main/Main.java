@@ -37,7 +37,7 @@ public class Main extends Application {
         });
 
         primaryStage.show();
-        OptionsController
-                .backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
+        OptionsController.backgroundMusic("C:/Users/Stanisław/IdeaProjects" +
+                "/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
     }
 }

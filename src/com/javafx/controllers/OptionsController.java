@@ -26,19 +26,12 @@ public class OptionsController implements Initializable {
     @FXML
     ComboBox<String> changeMusicBox;
 
-    public static int numberRangeFrom = 0, numberRangeTo = 100;
-    public static double numberOfAllowedGuesses = Double.POSITIVE_INFINITY;
-    protected static MediaPlayer backgroundMusicPlayer;
+    static int numberRangeFrom = 0, numberRangeTo = 100;
+    static double numberOfAllowedGuesses = Double.POSITIVE_INFINITY;
+    static MediaPlayer backgroundMusicPlayer;
     private static String savedRangeFrom = "", savedRangeTo = "", savedAllowedTries = "";
     private static boolean savedMusicCheckBox = true;
     private RootController rootController;
-
-    public static void backgroundMusic(String backgroundMusicPath) throws InterruptedException {
-        Media backgroundMusic = new Media(Paths.get(backgroundMusicPath).toUri().toString());
-        backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
-        backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        backgroundMusicPlayer.play();
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -75,24 +68,39 @@ public class OptionsController implements Initializable {
         });
     }
 
-    public void changeTheMusicAction() throws InterruptedException {
+    public static void backgroundMusic(String backgroundMusicPath) {
+        Media backgroundMusic = new Media(Paths.get(backgroundMusicPath).toUri().toString());
+        backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
+        backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
+        backgroundMusicPlayer.play();
+    }
+
+    @FXML
+    private void changeTheMusicAction() {
         switch (changeMusicBox.getValue()) {
             case "Video Game Level":
+                double backgroundVolume = backgroundMusicPlayer.getVolume();
                 backgroundMusicPlayer.stop();
                 backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
+                backgroundMusicPlayer.setVolume(backgroundVolume);
                 break;
             case "Walk through Meadow":
+                backgroundVolume = backgroundMusicPlayer.getVolume();
                 backgroundMusicPlayer.stop();
                 backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic2.mp3");
+                backgroundMusicPlayer.setVolume(backgroundVolume);
                 break;
             case "Discovering New Place":
+                backgroundVolume = backgroundMusicPlayer.getVolume();
                 backgroundMusicPlayer.stop();
                 backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic3.mp3");
+                backgroundMusicPlayer.setVolume(backgroundVolume);
                 break;
         }
     }
 
-    public void pauseMusicAction() {
+    @FXML
+    private void pauseMusicAction() {
         boolean musicCheck = musicCheckBox.isSelected();
         if (!musicCheck) {
             backgroundMusicPlayer.pause();
@@ -100,7 +108,8 @@ public class OptionsController implements Initializable {
             backgroundMusicPlayer.play();
     }
 
-    public void saveOptionsAction() {
+    @FXML
+    private void saveOptionsAction() {
         savedRangeFrom = rangeFromTextField.getText();
         savedRangeTo = rangeToTextField.getText();
         savedAllowedTries = allowedTriesTextField.getText();
@@ -115,7 +124,8 @@ public class OptionsController implements Initializable {
         else { numberOfAllowedGuesses = Integer.parseInt(savedAllowedTries); }
     }
 
-    public void backToMenuAction() throws IOException {
+    @FXML
+    private void backToMenuAction() throws IOException {
         savedMusicCheckBox = musicCheckBox.isSelected();
         rootController.loadMenuScreen();
     }

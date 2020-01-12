@@ -75,7 +75,7 @@
          </font>
       </Label>
       <Separator layoutX="25.0" layoutY="501.0" prefHeight="2.0" prefWidth="449.0" />
-      <Button layoutX="269.0" layoutY="522.0" mnemonicParsing="false" onAction="#backToMenuAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
+      <Button layoutX="269.0" layoutY="521.0" mnemonicParsing="false" onAction="#backToMenuAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
@@ -91,7 +91,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="20.0" />
          </font>
       </Label>
-      <Button layoutX="79.0" layoutY="522.0" mnemonicParsing="false" onAction="#saveOptionsAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="SAVE" textFill="WHITE">
+      <Button layoutX="79.0" layoutY="521.0" mnemonicParsing="false" onAction="#saveOptionsAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="SAVE" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>

@@ -7,7 +7,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="500.0" style="-fx-background-color: #310757; -fx-border-color: #632689; -fx-border-width: 10;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.javafx.controllers.PlayController">
    <children>
       <Separator layoutX="27.0" layoutY="504.0" prefHeight="2.0" prefWidth="449.0" />
-      <Button layoutX="176.0" layoutY="523.0" mnemonicParsing="false" onAction="#backToMenuAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
+      <Button layoutX="175.0" layoutY="521.0" mnemonicParsing="false" onAction="#backToMenuAction" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #632689;" text="BACK" textFill="WHITE">
          <font>
             <Font name="Berlin Sans FB Bold" size="22.0" />
          </font>
