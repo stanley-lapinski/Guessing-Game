@@ -1,5 +1,4 @@
 # Guessing Game #
-----
 
 **What does this application do?**
 
