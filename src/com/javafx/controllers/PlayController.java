@@ -9,7 +9,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.text.Font;
 
 import java.io.File;
 import java.io.IOException;
@@ -19,20 +18,20 @@ import java.util.ResourceBundle;
 public class PlayController implements Initializable {
 
     @FXML
-    ImageView tooLowImage, tooHighImage;
+    private ImageView tooLowImage, tooHighImage;
     @FXML
-    Pane playAgainPane;
+    private Pane playAgainPane;
     @FXML
-    TextField guessNumberInputField;
+    private TextField guessNumberInputField;
     @FXML
-    Label resultLabel, resultLabelLimited;
+    private Label resultLabel, resultLabelLimited;
 
     private RootController rootController;
     private MediaPlayer correctGuessPlayer, wrongGuessPlayer;
     private int theNumber;
     private double checkNumberOfGuesses = 0;
 
-    private static int random(int min, int max) {
+    private int random(int min, int max) {
         return (int) (min + (Math.random() * (max - min)));
     }
 

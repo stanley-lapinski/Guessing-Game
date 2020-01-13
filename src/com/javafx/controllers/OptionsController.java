@@ -18,13 +18,13 @@ import java.util.ResourceBundle;
 public class OptionsController implements Initializable {
 
     @FXML
-    CheckBox musicCheckBox;
+    private CheckBox musicCheckBox;
     @FXML
-    Slider musicVolumeSlider;
+    private Slider musicVolumeSlider;
     @FXML
-    TextField rangeFromTextField, rangeToTextField, allowedTriesTextField;
+    private TextField rangeFromTextField, rangeToTextField, allowedTriesTextField;
     @FXML
-    ComboBox<String> changeMusicBox;
+    private ComboBox<String> changeMusicBox;
 
     static int numberRangeFrom = 0, numberRangeTo = 100;
     static double numberOfAllowedGuesses = Double.POSITIVE_INFINITY;

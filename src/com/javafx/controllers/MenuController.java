@@ -3,15 +3,11 @@ package com.javafx.controllers;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
 import java.io.IOException;
 
 public class MenuController {
-
-    @FXML
-    Button playButton, howToPlayButton, optionsButton;
 
     private RootController rootController;
 
