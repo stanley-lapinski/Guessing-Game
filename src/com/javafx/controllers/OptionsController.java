@@ -67,8 +67,13 @@ public class OptionsController implements Initializable {
             }
         });
     }
+    private static String backgroundMusicPath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3";
 
-    public static void backgroundMusic(String backgroundMusicPath) {
+    public static void setBackgroundMusicPath(String backgroundMusicPath) {
+        OptionsController.backgroundMusicPath = backgroundMusicPath;
+    }
+
+    public static void backgroundMusic() {
         Media backgroundMusic = new Media(Paths.get(backgroundMusicPath).toUri().toString());
         backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
         backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
@@ -80,20 +85,29 @@ public class OptionsController implements Initializable {
         switch (changeMusicBox.getValue()) {
             case "Video Game Level":
                 double backgroundVolume = backgroundMusicPlayer.getVolume();
-                backgroundMusicPlayer.stop();
-                backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
+                setBackgroundMusicPath("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic1.mp3");
+                if (backgroundMusicPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+                    backgroundMusicPlayer.stop();
+                    backgroundMusic();
+                }
                 backgroundMusicPlayer.setVolume(backgroundVolume);
                 break;
             case "Walk through Meadow":
                 backgroundVolume = backgroundMusicPlayer.getVolume();
-                backgroundMusicPlayer.stop();
-                backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic2.mp3");
+                setBackgroundMusicPath("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic2.mp3");
+                if (backgroundMusicPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+                    backgroundMusicPlayer.stop();
+                    backgroundMusic();
+                }
                 backgroundMusicPlayer.setVolume(backgroundVolume);
                 break;
             case "Discovering New Place":
                 backgroundVolume = backgroundMusicPlayer.getVolume();
-                backgroundMusicPlayer.stop();
-                backgroundMusic("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic3.mp3");
+                setBackgroundMusicPath("C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic3.mp3");
+                if (backgroundMusicPlayer.getStatus() == MediaPlayer.Status.PLAYING) {
+                    backgroundMusicPlayer.stop();
+                    backgroundMusic();
+                }
                 backgroundMusicPlayer.setVolume(backgroundVolume);
                 break;
         }
@@ -101,11 +115,10 @@ public class OptionsController implements Initializable {
 
     @FXML
     private void pauseMusicAction() {
-        boolean musicCheck = musicCheckBox.isSelected();
-        if (!musicCheck) {
+        if (!musicCheckBox.isSelected())
             backgroundMusicPlayer.pause();
-        } else
-            backgroundMusicPlayer.play();
+        else
+            backgroundMusic();
     }
 
     @FXML
