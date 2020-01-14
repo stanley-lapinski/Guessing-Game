@@ -24,4 +24,4 @@ It's a simple game based on high-low mechanic. Your task is to guess the number 
 
 **Screen shots:**
 
-![fullScreenshot](https://user-images.githubusercontent.com/57737385/72194667-f43c4b00-340e-11ea-9f7b-158bf9229a1f.png)
+![image](https://user-images.githubusercontent.com/57737385/72306510-a2e2c480-3677-11ea-9380-dc882b19e340.png)
