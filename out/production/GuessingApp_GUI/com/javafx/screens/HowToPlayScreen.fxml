@@ -30,7 +30,7 @@
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>
       </Label>
-      <Label layoutX="37.0" layoutY="270.0" prefHeight="135.0" prefWidth="428.0" text="IF YOUR GUESS IS HIGHER, THAN THE NUMBER COMPUTER HAS CHOSEN, YOU WILL SEE MESSAGE &quot;TOO HIGH!&quot;, SUGGESTING YOU TO PICK LOWER NUMBER. IF YOUR GUESS IS TOO LOW, YOU WILL SEE &quot;TOO LOW&quot; MESSAGE SUGGESTING YOU TO PICK HIGHER NUMBER." textFill="WHITE" wrapText="true">
+      <Label layoutX="37.0" layoutY="270.0" prefHeight="135.0" prefWidth="428.0" text="IF YOUR GUESS IS HIGHER THAN THE NUMBER COMPUTER HAS CHOSEN, YOU WILL SEE MESSAGE &quot;TOO HIGH!&quot;, SUGGESTING YOU TO PICK LOWER NUMBER. IF YOUR GUESS IS TOO LOW, YOU WILL SEE &quot;TOO LOW&quot; MESSAGE SUGGESTING YOU TO PICK HIGHER NUMBER." textFill="WHITE" wrapText="true">
          <font>
             <Font name="Berlin Sans FB Demi Bold" size="18.0" />
          </font>

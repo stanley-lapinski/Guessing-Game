@@ -44,6 +44,19 @@ public class OptionsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        musicCheckBox.selectedProperty()
+                .addListener((observable, oldValue, newValue) -> checkWarning = savedMusicCheckBox == musicCheckBox.isSelected());
+        rangeFromTextField.textProperty()
+                .addListener((observableValue, oldValue, newValue) -> checkWarning = savedRangeFrom.equals(rangeFromTextField.getText()));
+        rangeToTextField.textProperty()
+                .addListener((observableValue, oldValue, newValue) -> checkWarning = savedRangeTo.equals(rangeToTextField.getText()));
+        allowedTriesTextField.textProperty()
+                .addListener((observableValue, oldValue, newValue) -> checkWarning = savedAllowedTries.equals(allowedTriesTextField.getText()));
+        changeMusicBox.valueProperty()
+                .addListener((observableValue, oldValue, newValue) -> checkWarning = savedChangeMusicBox.equals(changeMusicBox.getValue()));
+        musicVolumeSlider.valueProperty()
+                .addListener((observableValue, oldValue, newValue) -> checkWarning = savedBackgroundVolume == musicVolumeSlider.getValue());
+
         musicVolumeSlider.setValue(savedBackgroundVolume);
         musicVolumeSlider.valueProperty().addListener(observable -> backgroundMusicPlayer.setVolume(musicVolumeSlider.getValue() / 100));
 
@@ -146,6 +159,7 @@ public class OptionsController implements Initializable {
 
     @FXML
     private void saveOptionsAction() {
+        checkWarning = true;
         savedRangeFrom = rangeFromTextField.getText();
         savedRangeTo = rangeToTextField.getText();
         savedAllowedTries = allowedTriesTextField.getText();
@@ -165,13 +179,7 @@ public class OptionsController implements Initializable {
 
     @FXML
     private void backToMenuAction() throws IOException {
-        if ((!savedRangeFrom.equals(rangeFromTextField.getText())
-                || !savedRangeTo.equals(rangeToTextField.getText())
-                || !savedAllowedTries.equals(allowedTriesTextField.getText())
-                || !savedChangeMusicBox.equals(changeMusicBox.getValue())
-                || savedMusicCheckBox != musicCheckBox.isSelected()
-                || savedBackgroundVolume != musicVolumeSlider.getValue())
-                && !checkWarning) {
+        if (!checkWarning) {
             checkWarning = true;
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("/com/javafx/screens/warningScreen.fxml"));

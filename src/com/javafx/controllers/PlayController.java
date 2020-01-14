@@ -87,7 +87,10 @@ public class PlayController implements Initializable {
             else {
                 resultLabel.setText("Too high! Pick lower.");
                 if (OptionsController.numberOfAllowedGuesses != Double.POSITIVE_INFINITY)
-                    resultLabelLimited.setText("Only " + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) + " guesses left.");
+                    if ((int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) != 1)
+                        resultLabelLimited.setText("Only " + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) + " guesses left.");
+                    else
+                        resultLabelLimited.setText("Only " + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) + " guess left!");
                 tooHighImage.setVisible(true);
                 tooLowImage.setVisible(false);
                 wrongGuessSoundEffect();
@@ -109,8 +112,9 @@ public class PlayController implements Initializable {
         playAgainPane.setVisible(false);
         if (OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY)
             resultLabel.setText("");
-        else
+        else {
             resultLabel.setText("You regained your " + (int)OptionsController.numberOfAllowedGuesses + " guesses.");
+        }
         guessNumberInputField.setText("");
         checkNumberOfGuesses = 0;
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
@@ -137,22 +141,22 @@ public class PlayController implements Initializable {
     }
 
     private void correctGuessSoundEffect() {
-        String correctGuessFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess2.mp3";
-        Media correctGuessSound = new Media(new File(correctGuessFilePath).toURI().toString());
+        String correctGuessFilePath = "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess2.mp3";
+        Media correctGuessSound = new Media(correctGuessFilePath);
         correctGuessPlayer = new MediaPlayer(correctGuessSound);
         correctGuessPlayer.play();
     }
 
     private void wrongGuessSoundEffect() {
-        String wrongGuessFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/wrongGuess.mp3";
-        Media wrongGuessSound = new Media(new File(wrongGuessFilePath).toURI().toString());
+        String wrongGuessFilePath = "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/wrongGuess.mp3";
+        Media wrongGuessSound = new Media(wrongGuessFilePath);
         wrongGuessPlayer = new MediaPlayer(wrongGuessSound);
         wrongGuessPlayer.play();
     }
 
     private void gameOverSoundEffect() {
-        String gameOverFilePath = "C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameOver.mp3";
-        Media gameOverSound = new Media(new File(gameOverFilePath).toURI().toString());
+        String gameOverFilePath = "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameOver.mp3";
+        Media gameOverSound = new Media(gameOverFilePath);
         MediaPlayer gameOverPlayer = new MediaPlayer(gameOverSound);
         gameOverPlayer.play();
     }
