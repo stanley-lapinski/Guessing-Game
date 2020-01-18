@@ -124,7 +124,6 @@ public class PlayController implements Initializable {
         guessNumberInputField.setText("");
         checkNumberOfGuesses = 0;
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
-        System.out.println(theNumber);
     }
 
     @FXML
