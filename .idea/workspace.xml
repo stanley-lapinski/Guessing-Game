@@ -7,15 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/GuessingApp_GUI_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/artifacts/GuessingApp_GUI_jar/GuessingApp_GUI.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/GuessingApp_GUI_jar/GuessingApp_GUI.jar" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/GuessingApp_GUI/com/javafx/controllers/PlayController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/GuessingApp_GUI/com/javafx/controllers/PlayController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GuessingApp_GUI/com/javafx/sounds/gameOver1.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GuessingApp_GUI/com/javafx/sounds/gameOver1.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GuessingApp_GUI/com/javafx/sounds/gameOver2.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/GuessingApp_GUI/com/javafx/sounds/gameOver2.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/javafx/controllers/PlayController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/javafx/controllers/PlayController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -228,8 +222,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JAR Application.GuessingApp_GUI.jar" />
       <item itemvalue="Application.MainClass" />
+      <item itemvalue="JAR Application.GuessingApp_GUI.jar" />
     </list>
     <recent_temporary>
       <list>
@@ -304,26 +298,26 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="570" y="251" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1577299036237" />
-    <state x="266" y="330" key="FileChooserDialogImpl" timestamp="1579096182027">
+    <state x="266" y="330" key="FileChooserDialogImpl" timestamp="1579386659002">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="266" y="330" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1579096182027" />
-    <state width="1637" height="189" key="GridCell.Tab.0.bottom" timestamp="1579386387641">
+    <state x="266" y="330" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1579386659002" />
+    <state width="1637" height="189" key="GridCell.Tab.0.bottom" timestamp="1579449523499">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="189" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1579386387641" />
-    <state width="1637" height="189" key="GridCell.Tab.0.center" timestamp="1579386387640">
+    <state width="1637" height="189" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1579449523499" />
+    <state width="1637" height="189" key="GridCell.Tab.0.center" timestamp="1579449523499">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="189" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1579386387640" />
-    <state width="1637" height="189" key="GridCell.Tab.0.left" timestamp="1579386387640">
+    <state width="1637" height="189" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1579449523499" />
+    <state width="1637" height="189" key="GridCell.Tab.0.left" timestamp="1579449523499">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="189" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1579386387640" />
-    <state width="1637" height="189" key="GridCell.Tab.0.right" timestamp="1579386387640">
+    <state width="1637" height="189" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1579449523499" />
+    <state width="1637" height="189" key="GridCell.Tab.0.right" timestamp="1579449523499">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="189" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1579386387640" />
+    <state width="1637" height="189" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1579449523499" />
     <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1578964898513">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
@@ -340,14 +334,14 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1578964898513" />
-    <state x="76" y="73" width="1150" height="849" key="SettingsEditor" timestamp="1579385595874">
+    <state x="76" y="73" width="1150" height="849" key="SettingsEditor" timestamp="1579449508359">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="76" y="73" width="1150" height="849" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1579385595874" />
-    <state x="536" y="328" key="com.intellij.ide.util.TipDialog" timestamp="1579385385772">
+    <state x="76" y="73" width="1150" height="849" key="SettingsEditor/0.0.1680.1010@0.0.1680.1010" timestamp="1579449508359" />
+    <state x="536" y="328" key="com.intellij.ide.util.TipDialog" timestamp="1579449473472">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="536" y="328" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1579385385772" />
+    <state x="536" y="328" key="com.intellij.ide.util.TipDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1579449473472" />
     <state x="285" y="379" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1577396333398">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>

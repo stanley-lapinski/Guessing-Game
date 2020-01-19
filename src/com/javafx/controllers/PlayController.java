@@ -36,9 +36,6 @@ public class PlayController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-
         guessNumberInputField.setPadding(new Insets(0, 30, 0, 30));
         guessNumberInputField.textProperty().addListener((observableValue, oldValue, newValue) -> {
             if (!newValue.matches("\\d*")) {
@@ -48,7 +45,6 @@ public class PlayController implements Initializable {
         theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
         if (!(OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY))
             resultLabelLimited.setText("Watch out! You have only " + (int)OptionsController.numberOfAllowedGuesses + " guesses.");
-        System.out.println(theNumber);
     }
 
     @FXML
