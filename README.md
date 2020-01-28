@@ -12,6 +12,7 @@ You can adjust the settings of the game by modifying the range of numbers from w
 ![image](https://user-images.githubusercontent.com/57737385/72274820-24f9cb80-362d-11ea-8321-7c079ea67675.png)
 
 **Biggest challenges I've encountered**
+
 During the development, problems emerged when trying to implement music into the game. The idea was, to add sound effects to various actions and general background music to make the gameplay more enjoyable. However, because of the complexity of interactions, a lot of the times, additional mechanics had to be implemented in order to make it work.
 Despite the problems with sound design, the biggest challenge I've encountered, was time management. My enthusiasm and overall passion for coding got the best of me and every time I finished previous task or solved one issue, another idea popped into my head and I started implementing additional features into the game. This cause the project to be delayed.
 
