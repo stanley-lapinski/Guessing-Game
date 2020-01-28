@@ -10,6 +10,7 @@ You can adjust the settings of the game by modifying the range of numbers from w
 **Tools and Technologies used in this project:**
 
 ![image](https://user-images.githubusercontent.com/57737385/72274820-24f9cb80-362d-11ea-8321-7c079ea67675.png)
+![Java_1](https://user-images.githubusercontent.com/57737385/73260624-9491be00-41ca-11ea-9d79-c997d7433c0b.png)
 
 **Biggest challenges I've encountered**
 
