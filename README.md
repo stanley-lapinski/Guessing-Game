@@ -3,24 +3,26 @@
 
 **What does this application do?**
 
-It's a simple game based on high-low mechanic. Your task is to guess the number from certain range. When you make a guess (assuming you didn't win immidiately) program returns hints like: "Too high" or "Too low" depending onrelative position between your number and the number program picked for you to guess.
+It's a simple game based on high-low mechanic. Your task is to guess the number from certain range. When you make a guess (assuming you didn't win immidiately) program returns hints like: "Too high" or "Too low" depending on relative position between your number and the number program picked for you to guess.
+You can adjust the settings of the game by modifying the range of numbers from which computer will randomly select one for you. You can also add the number of possible guesses to make the game more of a challange.
 
 
 **Tools and Technologies used in this project:**
 
-![image](https://user-images.githubusercontent.com/57737385/72274820-24f9cb80-362d-11ea-8321-7c079ea67675.png)
-![image](https://user-images.githubusercontent.com/57737385/72275180-b5381080-362d-11ea-8441-1d8e78059641.png)
+![tools](https://user-images.githubusercontent.com/57737385/73260963-5cd74600-41cb-11ea-9dd5-7558eb1afc11.png)
 
+**Biggest challenges I've encountered**
+
+During the development, problems emerged when trying to implement music into the game. The idea was, to add sound effects to various actions and general background music to make the gameplay more enjoyable. However, because of the complexity of interactions, a lot of the times, additional mechanics had to be implemented in order to make it work.
+Despite the problems with sound design, the biggest challenge I've encountered, was time management. My enthusiasm and overall passion for coding got the best of me and every time I finished previous task or solved one issue, another idea popped into my head and I started implementing additional features into the game. This cause the project to be delayed.
 
 **What did I learn?**
 
-- random numbers generator
-- SceneBuilder
+- Time management
 - JavaFX
-- Media Player
-- Multi layered windows
-- regex
-
+- SceneBuilder
+- Managing multiple issues at the same time
+- TargetFX
 
 **Screen shots:**
 
