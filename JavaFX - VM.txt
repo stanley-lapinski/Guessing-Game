@@ -1,0 +1,14 @@
+--module-path C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media
+
+
+
+--module-path C:\Program Files\Java\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media
+
+
+
+
+TEST: "C:\Program Files\Java\jdk-13.0.1\bin\java.exe" --module-path C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media "-javaagent:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.4\lib\idea_rt.jar=56242:C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.4\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\Stanisław\IdeaProjects\TEST\out\production\TEST;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\src.zip;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx-swt.jar;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx.web.jar;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx.base.jar;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx.fxml.jar;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx.media.jar;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx.swing.jar;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx.controls.jar;C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib\javafx.graphics.jar sample.Main
+
+
+
+GUESSING-APP:  "C:\Program Files\Java\jdk-13.0.1\bin\java.exe" --module-path C:\Users\Stanisław\IdeaProjects\javafx-sdk-11.0.2\lib --add-modules javafx.controls,javafx.fxml,javafx.graphics,javafx.media -Dfile.encoding=windows-1250 -jar C:\Users\Stanisław\IdeaProjects\GuessingApp_GUI\out\artifacts\GuessingApp_GUI_jar\GuessingApp_GUI.jar
