@@ -25,7 +25,11 @@ public class Main extends Application {
         primaryStage.setScene(scene);
 
         primaryStage.initStyle(StageStyle.UNDECORATED);
-        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/javafx/images/guessingGameIcon.png")));
+        try {
+            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("/com/javafx/images/guessingGameIcon.png")));
+        } catch (Exception e) {
+            System.out.println("Missing file, " + e.getMessage());
+        }
 
         rootStackPane.setOnMousePressed(mouseEvent -> {
             x = mouseEvent.getSceneX();
