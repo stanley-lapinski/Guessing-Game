@@ -9,7 +9,7 @@ You can adjust the settings of the game by modifying the range of numbers from w
 
 **Tools and Technologies used in this project:**
 
-![tools](https://user-images.githubusercontent.com/57737385/73260963-5cd74600-41cb-11ea-9dd5-7558eb1afc11.png)
+![toolsGuess2](https://user-images.githubusercontent.com/57737385/74663639-6df8ee80-519c-11ea-8357-d0a65af17307.png)
 
 **Biggest challenges I've encountered**
 
