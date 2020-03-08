@@ -11,7 +11,7 @@ public class WarningController {
 
     @FXML
     private void confirmOnAction() {
-        OptionsController.warningStage = (Stage) warningCloseButton.getScene().getWindow();
-        OptionsController.warningStage.close();
+        OptionsController.setWarningStage((Stage) warningCloseButton.getScene().getWindow());
+        OptionsController.getWarningStage().close();
     }
 }

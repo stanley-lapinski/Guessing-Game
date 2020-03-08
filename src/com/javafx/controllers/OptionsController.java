@@ -34,12 +34,12 @@ public class OptionsController implements Initializable {
     private double currentBackgroundVolume;
     private static String backgroundMusicPath =
             "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic_VideoGameLevel.mp3";
-    static int numberRangeFrom = 0, numberRangeTo = 100;
-    static double numberOfAllowedGuesses = Double.POSITIVE_INFINITY;
+    private static int numberRangeFrom = 0, numberRangeTo = 100;
+    private static double numberOfAllowedGuesses = Double.POSITIVE_INFINITY;
     private static String savedRangeFrom = "", savedRangeTo = "", savedAllowedTries = "", savedChangeMusicBox = "Video Game Level";
-    protected static boolean savedMusicCheckBox = true;
+    private static boolean savedMusicCheckBox = true;
     private static double savedBackgroundVolume = 100.0;
-    static Stage warningStage;
+    private static Stage warningStage;
     private boolean checkWarning = false;
     private RootController rootController;
 
@@ -89,6 +89,30 @@ public class OptionsController implements Initializable {
                 allowedTriesTextField.setText(newValue.replaceAll("[^\\d]",""));
             }
         });
+    }
+
+    public static Stage getWarningStage() {
+        return warningStage;
+    }
+
+    public static void setWarningStage(Stage warningStage) {
+        OptionsController.warningStage = warningStage;
+    }
+
+    public static boolean isSavedMusicCheckBox() {
+        return savedMusicCheckBox;
+    }
+
+    public static double getNumberOfAllowedGuesses() {
+        return numberOfAllowedGuesses;
+    }
+
+    public static int getNumberRangeFrom() {
+        return numberRangeFrom;
+    }
+
+    public static int getNumberRangeTo() {
+        return numberRangeTo;
     }
 
     public static void setBackgroundMusicPath(String backgroundMusicPath) {

@@ -42,9 +42,9 @@ public class PlayController implements Initializable {
                 guessNumberInputField.setText(newValue.replaceAll("[^\\d]", ""));
             }
         });
-        theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
-        if (!(OptionsController.numberOfAllowedGuesses == Double.POSITIVE_INFINITY))
-            resultLabelLimited.setText("Watch out! You have only " + (int)OptionsController.numberOfAllowedGuesses + " guesses.");
+        theNumber = random(OptionsController.getNumberRangeFrom(), OptionsController.getNumberRangeTo());
+        if (OptionsController.getNumberOfAllowedGuesses() != Double.POSITIVE_INFINITY)
+            resultLabelLimited.setText("Watch out! You have only " + (int)OptionsController.getNumberOfAllowedGuesses() + " guesses.");
     }
 
     @FXML
@@ -66,7 +66,7 @@ public class PlayController implements Initializable {
                 tooLowImage.setVisible(false);
                 playAgainPane.setVisible(true);
             }
-            else if (checkNumberOfGuesses == OptionsController.numberOfAllowedGuesses) {
+            else if (checkNumberOfGuesses == OptionsController.getNumberOfAllowedGuesses()) {
                 resultLabel.setText("You loose...");
                 resultLabelLimited.setText("");
                 OptionsController.getBackgroundMusicPlayer().stop();
@@ -77,11 +77,11 @@ public class PlayController implements Initializable {
             }
             else if (guess < theNumber) {
                 resultLabel.setText("Too low! Pick higher.");
-                if (OptionsController.numberOfAllowedGuesses != Double.POSITIVE_INFINITY)
-                    if ((int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) != 1)
-                        resultLabelLimited.setText("Only " + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) + " guesses left.");
+                if (OptionsController.getNumberOfAllowedGuesses() != Double.POSITIVE_INFINITY)
+                    if ((int)(OptionsController.getNumberOfAllowedGuesses() - checkNumberOfGuesses) != 1)
+                        resultLabelLimited.setText("Only " + (int)(OptionsController.getNumberOfAllowedGuesses() - checkNumberOfGuesses) + " guesses left.");
                     else
-                        resultLabelLimited.setText("Only " + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) + " guess left!");
+                        resultLabelLimited.setText("Only " + (int)(OptionsController.getNumberOfAllowedGuesses() - checkNumberOfGuesses) + " guess left!");
                 tooHighImage.setVisible(false);
                 tooLowImage.setVisible(true);
                 wrongGuessSoundEffect();
@@ -89,11 +89,11 @@ public class PlayController implements Initializable {
             }
             else {
                 resultLabel.setText("Too high! Pick lower.");
-                if (OptionsController.numberOfAllowedGuesses != Double.POSITIVE_INFINITY)
-                    if ((int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) != 1)
-                        resultLabelLimited.setText("Only " + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) + " guesses left.");
+                if (OptionsController.getNumberOfAllowedGuesses() != Double.POSITIVE_INFINITY)
+                    if ((int)(OptionsController.getNumberOfAllowedGuesses() - checkNumberOfGuesses) != 1)
+                        resultLabelLimited.setText("Only " + (int)(OptionsController.getNumberOfAllowedGuesses() - checkNumberOfGuesses) + " guesses left.");
                     else
-                        resultLabelLimited.setText("Only " + (int)(OptionsController.numberOfAllowedGuesses - checkNumberOfGuesses) + " guess left!");
+                        resultLabelLimited.setText("Only " + (int)(OptionsController.getNumberOfAllowedGuesses() - checkNumberOfGuesses) + " guess left!");
                 tooHighImage.setVisible(true);
                 tooLowImage.setVisible(false);
                 wrongGuessSoundEffect();
@@ -115,11 +115,11 @@ public class PlayController implements Initializable {
         endGameMusic();
         playAgainPane.setVisible(false);
         resultLabel.setText("");
-        if (OptionsController.numberOfAllowedGuesses != Double.POSITIVE_INFINITY)
-            resultLabelLimited.setText("You regained your " + (int)OptionsController.numberOfAllowedGuesses + " guesses.");
+        if (OptionsController.getNumberOfAllowedGuesses() != Double.POSITIVE_INFINITY)
+            resultLabelLimited.setText("You regained your " + (int)OptionsController.getNumberOfAllowedGuesses() + " guesses.");
         guessNumberInputField.setText("");
         checkNumberOfGuesses = 0;
-        theNumber = random(OptionsController.numberRangeFrom, OptionsController.numberRangeTo);
+        theNumber = random(OptionsController.getNumberRangeFrom(), OptionsController.getNumberRangeTo());
     }
 
     @FXML
@@ -130,11 +130,11 @@ public class PlayController implements Initializable {
     }
 
     private void endGameMusic() {
-        if (checkNumberOfGuesses == OptionsController.numberOfAllowedGuesses)
+        if (checkNumberOfGuesses == OptionsController.getNumberOfAllowedGuesses())
             gameOverPlayer.stop();
         else
             correctGuessPlayer.stop();
-        if (OptionsController.savedMusicCheckBox)
+        if (OptionsController.isSavedMusicCheckBox())
             OptionsController.getBackgroundMusicPlayer().play();
     }
 
