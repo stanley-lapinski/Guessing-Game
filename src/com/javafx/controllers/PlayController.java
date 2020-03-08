@@ -60,7 +60,7 @@ public class PlayController implements Initializable {
             if (guess == theNumber) {
                 resultLabel.setText("Correct!");
                 resultLabelLimited.setText("You win!");
-                OptionsController.backgroundMusicPlayer.stop();
+                OptionsController.getBackgroundMusicPlayer().stop();
                 correctGuessSoundEffect();
                 tooHighImage.setVisible(false);
                 tooLowImage.setVisible(false);
@@ -69,7 +69,7 @@ public class PlayController implements Initializable {
             else if (checkNumberOfGuesses == OptionsController.numberOfAllowedGuesses) {
                 resultLabel.setText("You loose...");
                 resultLabelLimited.setText("");
-                OptionsController.backgroundMusicPlayer.stop();
+                OptionsController.getBackgroundMusicPlayer().stop();
                 gameOverSoundEffect();
                 tooHighImage.setVisible(false);
                 tooLowImage.setVisible(false);
@@ -135,7 +135,7 @@ public class PlayController implements Initializable {
         else
             correctGuessPlayer.stop();
         if (OptionsController.savedMusicCheckBox)
-            OptionsController.backgroundMusicPlayer.play();
+            OptionsController.getBackgroundMusicPlayer().play();
     }
 
     private void correctGuessSoundEffect() {

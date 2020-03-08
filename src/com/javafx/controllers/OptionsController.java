@@ -30,7 +30,7 @@ public class OptionsController implements Initializable {
     @FXML
     private ComboBox<String> changeMusicBox;
 
-    static MediaPlayer backgroundMusicPlayer;
+    private static MediaPlayer backgroundMusicPlayer;
     private double currentBackgroundVolume;
     private static String backgroundMusicPath =
             "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameBackgroundMusic_VideoGameLevel.mp3";
@@ -100,6 +100,10 @@ public class OptionsController implements Initializable {
         backgroundMusicPlayer = new MediaPlayer(backgroundMusic);
         backgroundMusicPlayer.setCycleCount(MediaPlayer.INDEFINITE);
         backgroundMusicPlayer.play();
+    }
+
+    public static MediaPlayer getBackgroundMusicPlayer() {
+        return backgroundMusicPlayer;
     }
 
     @FXML
