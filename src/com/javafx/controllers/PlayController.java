@@ -12,6 +12,7 @@ import javafx.scene.media.MediaPlayer;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class PlayController implements Initializable {
@@ -139,22 +140,22 @@ public class PlayController implements Initializable {
     }
 
     private void correctGuessSoundEffect() {
-        String correctGuessFilePath = "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/correctGuess.mp3";
-        Media correctGuessSound = new Media(correctGuessFilePath);
+        String correctGuessFilePath = "com/javafx/sounds/correctGuess.mp3";
+        Media correctGuessSound = new Media(Objects.requireNonNull(OptionsController.class.getClassLoader().getResource(correctGuessFilePath)).toString());
         correctGuessPlayer = new MediaPlayer(correctGuessSound);
         correctGuessPlayer.play();
     }
 
     private void wrongGuessSoundEffect() {
-        String wrongGuessFilePath = "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/wrongGuess.mp3";
-        Media wrongGuessSound = new Media(wrongGuessFilePath);
+        String wrongGuessFilePath = "com/javafx/sounds/wrongGuess.mp3";
+        Media wrongGuessSound = new Media(Objects.requireNonNull(OptionsController.class.getClassLoader().getResource(wrongGuessFilePath)).toString());
         wrongGuessPlayer = new MediaPlayer(wrongGuessSound);
         //wrongGuessPlayer.play();
     }
 
     private void gameOverSoundEffect() {
-        String gameOverFilePath = "file:///C:/Users/Stanisław/IdeaProjects/GuessingApp_GUI/src/com/javafx/sounds/gameOver.mp3";
-        Media gameOverSound = new Media(gameOverFilePath);
+        String gameOverFilePath = "com/javafx/sounds/gameOver.mp3";
+        Media gameOverSound = new Media(Objects.requireNonNull(OptionsController.class.getClassLoader().getResource(gameOverFilePath)).toString());
         gameOverPlayer = new MediaPlayer(gameOverSound);
         gameOverPlayer.play();
     }
